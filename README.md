@@ -15,29 +15,31 @@ You will learn the following
 ## Setup/installation instructions
 1. Clone this repo
 
-1.
+1. Enter the cloned repo
     ```
     cd docker-presentation
     ```
 
-1.
+1. Start the vagrant
     ```
     vagrant up
     ```
 
-1.
+1. Connect to the vagrant
     ```
     vagrant ssh
     ```
 
-1.
+1. Assume root
     ```
     sudo su -
     ```
 
-1.
+1. Show some basic docker information
     ```
     docker ps
+    docker version
+    docker info
     ```
 
 ## Additional information
