@@ -13,5 +13,6 @@ You will learn the following
 You will need [Vagrant](https://www.vagrantup.com/downloads.html) to provide the environment for this presentation
 
 ## Additional information
-|   |   |
-|Vagrant IP|10.1.10.11|
+|Vagrant IP|
+|:---|
+|10.1.10.11|
