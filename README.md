@@ -14,24 +14,24 @@ You will learn the following
 
 ## Setup/installation instructions
 1. Clone this repo
-
-1.  ```
+1.
+    ```
     cd docker-presentation
     ```
-
-1.  ```
+1.
+    ```
     vagrant up
     ```
-
-1.  ```
+1.
+    ```
     vagrant ssh
     ```
-
-1.  ```
+1.
+    ```
     sudo su -
     ```
-
-1.  ```
+1.
+    ```
     docker ps
     ```
 
