@@ -9,8 +9,26 @@ You will learn the following
 * etc
 * WORK IN PROGRESS!!
 
+## Pre-reqs for the demo
+1. You will need [Vagrant](https://www.vagrantup.com/downloads.html) to provide the environment for this presentation
+
 ## Setup/installation instructions
-You will need [Vagrant](https://www.vagrantup.com/downloads.html) to provide the environment for this presentation
+1. Clone this repo
+1. ```
+    cd docker-presentation
+   ```
+1. ```
+    vagrant up
+   ```
+1. ```
+    vagrant ssh
+   ```
+1. ```
+    sudo su -
+   ```
+1. ```
+    docker ps
+   ```
 
 ## Additional information
 |Vagrant IP|
