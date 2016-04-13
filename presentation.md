@@ -10,7 +10,7 @@ author:
     email: philporada@gmail.com && pporada@greenlancer.com
     twitter: pgporada
 
--- center
+--
 
 # Docker: There and Back Again
 <img src='images/detroit.png' style='margin: 0 auto; display: block'></img>
