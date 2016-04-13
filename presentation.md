@@ -336,8 +336,8 @@ The total size of that on disk is
 #### Terminology
 <hr style="height:2pt; visibility:hidden;" />
 
-|  Docker Term | Explanation  |
-| :-- | -- |
+|  Docker Term | Explanation |
+| :----------- | ----------- |
 | Namespaces | Provides a view of the system that make the container appear to have all of the hosts resources. Examples are PIDs, Mounts, IPC, and Network. |
 | User Namespaces | Distinguish container privileged vs host privileged root user. |
 | Cgroups | |
