@@ -18,31 +18,31 @@ author:
 --
 
 ### Who am I?
-* *Name*: Phil Porada
+* **Name**: Phil Porada
 <img src='images/us.jpg' style='margin: 0 auto; display: block; width: 400px; height: 400px'></img>
 
 --
 
 ### Who am I?
-* *Name*: Phil Porada
-* *Occupation*: Linux Engineer
+* **Name**: Phil Porada
+* **Occupation**: Linux Engineer
 <img src='images/pumpkin.jpg' style='margin: 0 auto; display: block; width: 400px; height: 400px'></img>
 
 --
 
 ### Who am I?
-* *Name*: Phil Porada
-* *Occupation*: Linux Engineer
-* *Workplace*: GreenLancer located in downtown Detroit, MI
+* **Name**: Phil Porada
+* **Occupation**: Linux Engineer
+* **Workplace**: GreenLancer located in downtown Detroit, MI
 <img src='images/gl-logo.png' style='margin: 0 auto; display: block; width: 800px; height: 200px'></img>
 
 --
 
 ### Who am I?
-* *Name*: Phil Porada
-* *Occupation*: Linux Engineer
-* *Workplace*: GreenLancer located in downtown Detroit, MI
-* *Beer*: Yes, please! <img src='images/beers.png' style='margin: 0 auto; display: block; width: 64px; height: 64px;'>
+* **Name**: Phil Porada
+* **Occupation**: Linux Engineer
+* **Workplace**: GreenLancer located in downtown Detroit, MI
+* **Beer**: Yes, please! <img src='images/beers.png' style='margin: 0 auto; display: block; width: 64px; height: 64px;'>
 <img src='images/hopslam.jpg' style='margin: 0 auto; display: block; width: 800px; height: 400px'></img>
 
 --
@@ -107,8 +107,8 @@ author:
 
 ### What Docker is NOT
 * Containers are not VMs nor will ever be
-    * *VMs*: Think of each VM as an individual house
-    * *Containers*: Think of them as units in an apartment
+    * **VMs**: Think of each VM as an individual house
+    * **Containers**: Think of them as units in an apartment
 
 --
 
