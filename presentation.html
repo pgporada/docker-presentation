@@ -688,11 +688,30 @@ pre .xml .cdata {
   <div class="slide hidden" id="slide-9">
     <section class="slide-content"><h3 id="what-is-docker-">What is Docker?</h3>
 <ul>
-<li>Words</li>
+<li>Started in 2013 @ dotCloud</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h3 id="what-is-docker-">What is Docker?</h3>
+<ul>
+<li>Started in 2013 @ dotCloud</li>
+<li>Written in Go</li>
+</ul>
+<p><img src='http://jbu.io/wp-content/uploads/2015/10/go_lang_mascot_by_kirael_art-d7kunhu.gif' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h3 id="what-is-docker-">What is Docker?</h3>
+<ul>
+<li>Started in 2013 @ dotCloud</li>
+<li>Written in Go</li>
+<li>Finally allows code to be written once and ran on any* system</li>
+</ul>
+<p>* If that system runs a 64bit Linux/FreeBSD/Solaris kernel</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
     <section class="slide-content"><h3 id="what-docker-is-not">What Docker is NOT</h3>
 <ul>
 <li>Containers are not VMs nor will ever be<ul>
@@ -703,7 +722,7 @@ pre .xml .cdata {
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-11">
+  <div class="slide hidden" id="slide-13">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -722,7 +741,7 @@ pre .xml .cdata {
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-12">
+  <div class="slide hidden" id="slide-14">
     <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-info">docker info</h4>
 <ul>
@@ -753,7 +772,7 @@ Total Memory: 7.707 GiB</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-13">
+  <div class="slide hidden" id="slide-15">
     <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-ps">docker ps</h4>
 <ul>
@@ -764,7 +783,7 @@ a870e1ec8f92           httpd               &quot;httpd-foreground&quot;   2 seco
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-14">
+  <div class="slide hidden" id="slide-16">
     <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-ps-a">docker ps -a</h4>
 <ul>
@@ -777,7 +796,7 @@ a870e1ec8f92           httpd                 &quot;httpd-foreground&quot;  2 sec
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-15">
+  <div class="slide hidden" id="slide-17">
     <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-run-cid">docker run $CID</h4>
 <ul>
@@ -790,7 +809,7 @@ AH00558: httpd: Could not reliably determine the server&#39;s fully qualified do
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-16">
+  <div class="slide hidden" id="slide-18">
     <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-run-d-cid">docker run -d $CID</h4>
 <ul>
@@ -805,7 +824,7 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 ```</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-17">
+  <div class="slide hidden" id="slide-19">
     <section class="slide-content"><h3 id="troubleshooting">Troubleshooting</h3>
 <h4 id="docker-logs-cid">docker logs $CID</h4>
 <ul>
@@ -814,7 +833,7 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-18">
+  <div class="slide hidden" id="slide-20">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -833,13 +852,13 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-19">
+  <div class="slide hidden  center" id="slide-21">
     <section class="slide-content"><p><br>
 <br></p>
 <h1 id="demo-1">DEMO-1</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-20">
+  <div class="slide hidden" id="slide-22">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -860,11 +879,11 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-21">
+  <div class="slide hidden" id="slide-23">
     <section class="slide-content"><h3 id="writing-your-own-dockerfiles">Writing your own Dockerfiles</h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-22">
+  <div class="slide hidden" id="slide-24">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -884,13 +903,13 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-23">
+  <div class="slide hidden  center" id="slide-25">
     <section class="slide-content"><p><br>
 <br></p>
 <h1 id="demo-2">DEMO-2</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-24">
+  <div class="slide hidden" id="slide-26">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -910,11 +929,11 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-25">
+  <div class="slide hidden" id="slide-27">
     <section class="slide-content"><h3 id="docker-networking">Docker Networking</h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-26">
+  <div class="slide hidden" id="slide-28">
     <section class="slide-content"><h3 id="cleanup">Cleanup</h3>
 <p>Docker images can eat up a lot of space, especially if you&#39;re constantly rebuilding and tagging. This size though is</p>
 <pre><code>$ docker images
@@ -927,7 +946,7 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 <p>The total size of that on disk is</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-27">
+  <div class="slide hidden" id="slide-29">
     <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
 <h4 id="terminology">Terminology</h4>
 <hr style="height:2pt; visibility:hidden;" />
@@ -968,11 +987,11 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </table>
 </section>
   </div>
-  <div class="slide hidden" id="slide-28">
+  <div class="slide hidden" id="slide-30">
     <section class="slide-content"><h3 id="how-do-we-actually-use-this-in-our-day-to-day-jobs-">How do we actually use this in our day to day jobs?</h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-29">
+  <div class="slide hidden" id="slide-31">
     <section class="slide-content"><h3 id="how-to-get-help">How to get help</h3>
 <ul>
 <li>Freenode IRC: #docker</li>
@@ -981,7 +1000,7 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-30">
+  <div class="slide hidden" id="slide-32">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -1001,12 +1020,12 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-31">
+  <div class="slide hidden" id="slide-33">
     <section class="slide-content"><h3 id="q-a">Q/A</h3>
 <p><img src='images/qa.jpg' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img></p>
 </section>
   </div>
-  <div class="slide hidden author-slide" id="slide-32">
+  <div class="slide hidden author-slide" id="slide-34">
     <section class="slide-content"><div class="author">
   <h1 class="name">Phil Porada</h1>
     <h3 class="twitter">

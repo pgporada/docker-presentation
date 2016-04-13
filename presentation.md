@@ -104,7 +104,24 @@ author:
 --
 
 ### What is Docker?
-* Words
+* Started in 2013 @ dotCloud
+
+--
+
+### What is Docker?
+* Started in 2013 @ dotCloud
+* Written in Go
+
+<img src='http://jbu.io/wp-content/uploads/2015/10/go_lang_mascot_by_kirael_art-d7kunhu.gif' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img>
+
+--
+
+### What is Docker?
+* Started in 2013 @ dotCloud
+* Written in Go
+* Finally allows code to be written once and ran on any\* system
+
+\* If that system runs a 64bit Linux/FreeBSD/Solaris kernel
 
 --
 
