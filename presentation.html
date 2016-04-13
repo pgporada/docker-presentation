@@ -22,7 +22,7 @@ light green : #a6e22e
 
 /* Theme Styles */
 body {
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: 'DejaVu Sans', 'Liberation Sans', 'FreeSans', 'Helvetica', 'Arial', sans-serif;
   font-size: 100%;
   color: #fafafa;
   background-color: #191919;
@@ -139,7 +139,7 @@ img.badge {
 h1,
 h2,
 h3 {
-  font-family: 'Monaco', 'Lucida Console', serif;
+  font-family: 'Monaco', 'DejaVu Sans Mono', 'Liberation Mono', 'Lucida Console', Monospaced;
 }
 
 h1 {
@@ -170,7 +170,7 @@ h3 {
 }
 
 ul {
-  padding: 20px 0 0 60px;
+  padding: 0 0 0 60px;
   font-weight: 200;
   line-height: 1.375;
 }
@@ -278,9 +278,7 @@ table th {
 /* Code Highlighting */
 code {
   padding: .1em .35em;
-  font-family: 'Fira Mono';
-  /* color: #fafafa; */
-  font-family: 'Monaco', monospace;
+  font-family: 'Monaco', 'Liberation Mono', 'Andale Mono', monospace;
   color: white;
   background-color: #272822;
   border-radius: 3px;
@@ -289,12 +287,11 @@ code {
 pre code {
   display: block;
   padding: .5em;
-  /*font-family: 'Fira Mono'; */
   font-weight: 400;
   overflow-y: hidden;
   /*background: #272822;*/
   background: #292929;
-  font-family: 'Monaco', monospace;
+  font-family: 'Monaco', 'Liberation Mono', 'Andale Mono', monospace;
   color: #ababab;
   border-left: 8px solid #00A514;
 }
@@ -721,26 +718,62 @@ pre .xml .cdata {
 </section>
   </div>
   <div class="slide hidden" id="slide-12">
-    <section class="slide-content"><h3 id="commands">Commands</h3>
-<h4 id="docker-ps">docker ps</h4>
-<p>Process oriented API that shows running docker containers</p>
-<pre><code>$ docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-a870e1ec8f92           httpd               &quot;httpd-foreground&quot;   2 seconds ago       Up 1 seconds        80/tcp              jovial_jones</code></pre>
+    <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
+<h4 id="docker-info">docker info</h4>
+<ul>
+<li>Display system-wide information<pre><code>$ docker info
+Containers: 77
+Running: 0
+Paused: 0
+Stopped: 77
+Images: 509
+Server Version: 1.10.3
+Storage Driver: aufs
+Root Dir: /var/lib/docker/aufs
+Backing Filesystem: extfs
+Dirs: 851
+Dirperm1 Supported: true
+Execution Driver: native-0.2
+Logging Driver: json-file
+Plugins:
+Volume: local
+Network: null host bridge
+Kernel Version: 4.2.0-34-generic
+Operating System: Ubuntu 15.10
+OSType: linux
+Architecture: x86_64
+CPUs: 4
+Total Memory: 7.707 GiB</code></pre>
+</li>
+</ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-13">
-    <section class="slide-content"><h3 id="troubleshooting">Troubleshooting</h3>
-<p>Show docker containers in any state</p>
-<pre><code>$ docker ps -a
+    <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
+<h4 id="docker-ps">docker ps</h4>
+<ul>
+<li>Process oriented API that shows running docker containers<pre><code>$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+a870e1ec8f92           httpd               &quot;httpd-foreground&quot;   2 seconds ago       Up 1 seconds        80/tcp              jovial_jones</code></pre>
+</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
+<h4 id="docker-ps-a">docker ps -a</h4>
+<ul>
+<li>Show docker containers in any state<pre><code>$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 a870e1ec8f92           httpd                 &quot;httpd-foreground&quot;  2 seconds ago       Up 1 seconds        80/tcp              jovial_jones
 0601aae9ccaa           467fe3d6319c       &quot;/bin/sh -c &#39;mkdir -p&quot;    1 hour ago         Exited (1) 1 hour ago                 cocky_perlman
 44e21f1e0eae           centos:centos7     &quot;-it bash&quot;                1 hour ago         Created                               naughty_stallman</code></pre>
+</li>
+</ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-14">
-    <section class="slide-content"><h3 id="starting-containers">Starting containers</h3>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-run-cid">docker run $CID</h4>
 <ul>
 <li>Run a container in the foreground<pre><code>$ docker run httpd
@@ -752,8 +785,8 @@ AH00558: httpd: Could not reliably determine the server&#39;s fully qualified do
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-15">
-    <section class="slide-content"><h3 id="starting-containers">Starting Containers</h3>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-run-d-cid">docker run -d $CID</h4>
 <ul>
 <li>Run a container in the background
@@ -767,16 +800,16 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 ```</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-16">
+  <div class="slide hidden" id="slide-17">
     <section class="slide-content"><h3 id="troubleshooting">Troubleshooting</h3>
-<h4 id="docker-logs-container">docker logs $CONTAINER</h4>
+<h4 id="docker-logs-cid">docker logs $CID</h4>
 <ul>
 <li>Get logs from a container<pre><code>$ docker logs e69</code></pre>
 </li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-17">
+  <div class="slide hidden" id="slide-18">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -795,11 +828,13 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-18">
-    <section class="slide-content"><h1 id="demo-1">DEMO-1</h1>
+  <div class="slide hidden  center" id="slide-19">
+    <section class="slide-content"><p><br>
+<br></p>
+<h1 id="demo-1">DEMO-1</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-19">
+  <div class="slide hidden" id="slide-20">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -820,11 +855,11 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-20">
+  <div class="slide hidden" id="slide-21">
     <section class="slide-content"><h3 id="writing-your-own-dockerfiles">Writing your own Dockerfiles</h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-21">
+  <div class="slide hidden" id="slide-22">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -844,11 +879,13 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-22">
-    <section class="slide-content"><h1 id="demo-2">DEMO-2</h1>
+  <div class="slide hidden  center" id="slide-23">
+    <section class="slide-content"><p><br>
+<br></p>
+<h1 id="demo-2">DEMO-2</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-23">
+  <div class="slide hidden" id="slide-24">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -868,13 +905,13 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-24">
+  <div class="slide hidden" id="slide-25">
     <section class="slide-content"><h3 id="docker-networking">Docker Networking</h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-25">
+  <div class="slide hidden" id="slide-26">
     <section class="slide-content"><h3 id="cleanup">Cleanup</h3>
-<p>Docker images can eat up a lot of space, especially if you&#39;re constantly rebuilding and tagging.</p>
+<p>Docker images can eat up a lot of space, especially if you&#39;re constantly rebuilding and tagging. This size though is</p>
 <pre><code>$ docker images
 REPOSITORY                              TAG                  IMAGE ID            CREATED             SIZE
 greenlancer/jenkins-slave               latest               3bd6965573c9        5 hours ago         854.2 MB
@@ -885,7 +922,7 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 <p>The total size of that on disk is</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-26">
+  <div class="slide hidden" id="slide-27">
     <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
 <h4 id="terminology">Terminology</h4>
 <hr style="height:2pt; visibility:hidden;" />
@@ -926,11 +963,11 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </table>
 </section>
   </div>
-  <div class="slide hidden" id="slide-27">
+  <div class="slide hidden" id="slide-28">
     <section class="slide-content"><h3 id="how-do-we-actually-use-this-in-our-day-to-day-jobs-">How do we actually use this in our day to day jobs?</h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-28">
+  <div class="slide hidden" id="slide-29">
     <section class="slide-content"><h3 id="how-to-get-help">How to get help</h3>
 <ul>
 <li>Freenode IRC: #docker</li>
@@ -939,7 +976,7 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-29">
+  <div class="slide hidden" id="slide-30">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -959,12 +996,12 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-30">
-    <section class="slide-content"><h1 id="q-a">Q/A</h1>
+  <div class="slide hidden  center" id="slide-31">
+    <section class="slide-content"><h3 id="q-a">Q/A</h3>
 <p><img src='images/qa.jpg' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img></p>
 </section>
   </div>
-  <div class="slide hidden author-slide" id="slide-31">
+  <div class="slide hidden author-slide" id="slide-32">
     <section class="slide-content"><div class="author">
   <h1 class="name">Phil Porada</h1>
     <h3 class="twitter">

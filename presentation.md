@@ -130,9 +130,39 @@ author:
 
 --
 
-### Commands
+### Docker commands
+#### docker info
+* Display system-wide information
+```
+$ docker info
+Containers: 77
+ Running: 0
+ Paused: 0
+ Stopped: 77
+Images: 509
+Server Version: 1.10.3
+Storage Driver: aufs
+ Root Dir: /var/lib/docker/aufs
+ Backing Filesystem: extfs
+ Dirs: 851
+ Dirperm1 Supported: true
+Execution Driver: native-0.2
+Logging Driver: json-file
+Plugins:
+ Volume: local
+ Network: null host bridge
+Kernel Version: 4.2.0-34-generic
+Operating System: Ubuntu 15.10
+OSType: linux
+Architecture: x86_64
+CPUs: 4
+Total Memory: 7.707 GiB
+```
+--
+
+### Docker commands
 #### docker ps
-Process oriented API that shows running docker containers
+* Process oriented API that shows running docker containers
 ```
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
@@ -141,9 +171,9 @@ a870e1ec8f92           httpd               "httpd-foreground"   2 seconds ago   
 
 --
 
-### Troubleshooting
-
-Show docker containers in any state
+### Docker commands
+#### docker ps -a
+* Show docker containers in any state
 ```
 $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
@@ -154,7 +184,7 @@ a870e1ec8f92           httpd                 "httpd-foreground"  2 seconds ago  
 
 --
 
-### Starting containers
+### Docker commands
 ####docker run $CID
 * Run a container in the foreground
 ```
@@ -166,7 +196,7 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 ```
 --
 
-### Starting Containers
+### Docker commands
 #### docker run -d $CID
 * Run a container in the background
 ```
@@ -181,7 +211,7 @@ e6902788cd79        httpd               "httpd-foreground"   5 hours ago        
 --
 
 ### Troubleshooting
-#### docker logs $CONTAINER
+#### docker logs $CID
 * Get logs from a container
 ```
 $ docker logs e69
@@ -206,6 +236,8 @@ $ docker logs e69
 
 -- center
 
+<br>
+<br>
 # DEMO-1
 
 --
@@ -251,6 +283,8 @@ $ docker logs e69
 
 -- center
 
+<br>
+<br>
 # DEMO-2
 
 --
@@ -279,7 +313,7 @@ $ docker logs e69
 
 ### Cleanup
 
-Docker images can eat up a lot of space, especially if you're constantly rebuilding and tagging.
+Docker images can eat up a lot of space, especially if you're constantly rebuilding and tagging. This size though is
 ```
 $ docker images
 REPOSITORY                              TAG                  IMAGE ID            CREATED             SIZE
@@ -340,5 +374,5 @@ The total size of that on disk is
 
 -- center
 
-# Q/A
+### Q/A
 <img src='images/qa.jpg' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img>
