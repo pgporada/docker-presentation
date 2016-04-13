@@ -675,19 +675,152 @@ pre .xml .cdata {
 <ul>
 <li><em>Name</em>: Phil Porada</li>
 <li><em>Occupation</em>: Linux Engineer</li>
-<li><em>Workplace</em>: GreenLancer
+<li><em>Workplace</em>: GreenLancer located in downtown Detroit, MI
 <img src='images/gl-logo.png' style='margin: 0 auto; display: block; width: 800px; height: 200px'></img></li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><h3 id="who-am-i-">Who am I?</h3>
+<ul>
+<li><em>Name</em>: Phil Porada</li>
+<li><em>Occupation</em>: Linux Engineer</li>
+<li><em>Workplace</em>: GreenLancer located in downtown Detroit, MI</li>
+<li><em>Beer</em>: Yes, please! <img src='images/beers.png' style='margin: 0 auto; display: block; width: 64px; height: 64px;'>
+<img src='images/hopslam.jpg' style='margin: 0 auto; display: block; width: 800px; height: 400px'></img></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-6">
+    <section class="slide-content"><h3 id="agenda">Agenda</h3>
+<ul>
+<li><font color="#ff000">Requirements, Terminology, Intro to Docker, &amp; Expectation Management</font></li>
+<li>Docker Commands, Troubleshooting</li>
+<li>Troubleshooting</li>
+<li>===== DEMO =====</li>
+<li>Writing your own Dockerfiles</li>
+<li>Dockerfile deep dive</li>
+<li>===== DEMO =====</li>
+<li>Docker Security</li>
+<li>Docker Networking</li>
+<li>===== DEMO =====</li>
+<li>Developer Workflow</li>
+<li>Day to day Docker usage @ GreenLancer</li>
+<li>Questions and Answers</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h3 id="docker-requirements">Docker Requirements</h3>
+<table>
+<thead>
+<tr>
+<th><font color="#00cc00">Runtime Dependency</font></th>
+<th><font color="#00cc00">Version</font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iptables</td>
+<td>&gt;= 1.4</td>
+</tr>
+<tr>
+<td>git</td>
+<td>&gt;= 1.7</td>
+</tr>
+<tr>
+<td>procps (ps)</td>
+<td>any</td>
+</tr>
+<tr>
+<td>xz compression engine</td>
+<td>&gt;= 4.9</td>
+</tr>
+</tbody>
+</table>
+<hr style="height:2pt; visibility:hidden;" />
+
+<table>
+<thead>
+<tr>
+<th><font color="#00cc00">Kernel Version</font></th>
+<th><font color="#00cc00">Does it work?</font></th>
+<th><font color="#00cc00">Notes</font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;= 3.10</td>
+<td>Yes</td>
+<td>Installed on RHEL/CentOS7 out of the box.</td>
+</tr>
+<tr>
+<td>&gt;= 3.16</td>
+<td>Yes</td>
+<td>Needed for multi-host networking on Swarm. Can be acquired via ELRepo</td>
+</tr>
+<tr>
+<td>&lt; 3.10</td>
+<td>No</td>
+<td>Do not use an older version of Docker. This technology evolves quickly.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Docker Dependencies: <a href="https://docs.docker.com/engine/installation/binaries/">https://docs.docker.com/engine/installation/binaries/</a></li>
+<li>CentOS 6 ELRepo kernel: <a href="https://docs.docker.com/engine/installation/binaries/">https://docs.docker.com/engine/installation/binaries/</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h3 id="docker-terminology">Docker Terminology</h3>
+<hr style="height:2pt; visibility:hidden;" />
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Docker Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Layer</td>
+<td>Read-only files that have run to provision the system.</td>
+</tr>
+<tr>
+<td style="text-align:left">Image</td>
+<td>Basis of all containers.</td>
+</tr>
+<tr>
+<td style="text-align:left">Container</td>
+<td>A running image.</td>
+</tr>
+<tr>
+<td style="text-align:left">Registry</td>
+<td>Centralized place to store containers.</td>
+</tr>
+<tr>
+<td style="text-align:left">Manifest</td>
+<td>Contains the name, tag, history, etc of an image.</td>
+</tr>
+<tr>
+<td style="text-align:left">Container ID/CID</td>
+<td>A SHA256 checksum of the entire image manifest.</td>
+</tr>
+</tbody>
+</table>
+<p><img src='images/multilayer-container.png' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
     <section class="slide-content"><h3 id="what-is-docker-">What is Docker?</h3>
 <ul>
 <li>Words</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-6">
+  <div class="slide hidden" id="slide-10">
     <section class="slide-content"><h3 id="what-docker-is-not">What Docker is NOT</h3>
 <ul>
 <li>Containers are not VMs nor will ever be<ul>
@@ -698,17 +831,35 @@ pre .xml .cdata {
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-7">
-    <section class="slide-content"><h3 id="docker-requirements">Docker Requirements</h3>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h3 id="agenda">Agenda</h3>
+<ul>
+<li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
+<li><font color="#ff000">Docker Commands, Troubleshooting</font></li>
+<li>Troubleshooting</li>
+<li>===== DEMO =====</li>
+<li>Writing your own Dockerfiles</li>
+<li>Dockerfile deep dive</li>
+<li>===== DEMO =====</li>
+<li>Docker Security</li>
+<li>Docker Networking</li>
+<li>===== DEMO =====</li>
+<li>Developer Workflow</li>
+<li>Day to day Docker usage @ GreenLancer</li>
+<li>Questions and Answers</li>
+</ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-8">
-    <section class="slide-content"><h3 id="basic-docker-commands">Basic Docker Commands</h3>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h4 id="docker-ps">docker ps</h4>
 <p>Show running docker containers</p>
 <pre><code class="lang-sh">$ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 a870e1ec8f92           httpd               <span class="hljs-string">"httpd-foreground"</span>   2 seconds ago       Up 1 seconds        80/tcp              jovial_jones</code></pre>
-<h3 id="troubleshooting">Troubleshooting</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h3 id="troubleshooting">Troubleshooting</h3>
 <p>Show docker containers in any state</p>
 <pre><code class="lang-sh">$ docker ps <span class="hljs-_">-a</span>
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
@@ -717,11 +868,44 @@ a870e1ec8f92           httpd                 <span class="hljs-string">"httpd-fo
 44e21f1e0eae           centos:centos7     <span class="hljs-string">"-it bash"</span>                1 hour ago         Created                               naughty_stallman</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-9">
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h3 id="starting-containers">Starting containers</h3>
+<h4 id="docker-run-cid">docker run $CID</h4>
+<ul>
+<li><p>Run a container in the foreground</p>
+<pre><code class="lang-sh">$ docker run httpd
+AH00558: httpd: Could not reliably determine the server<span class="hljs-string">'s fully qualified domain name, using 10.250.1.3. Set the '</span>ServerName<span class="hljs-string">' directive globally to suppress this message
+AH00558: httpd: Could not reliably determine the server'</span>s fully qualified domain name, using 10.250.1.3. Set the <span class="hljs-string">'ServerName'</span> directive globally to suppress this message
+[Mon Apr 11 23:59:08.108723 2016] [mpm_event:notice] [pid 1:tid 140473353303936] AH00489: Apache/2.4.18 (Unix) configured -- resuming normal operations
+[Mon Apr 11 23:59:08.108784 2016] [core:notice] [pid 1:tid 140473353303936] AH00094: Command line: <span class="hljs-string">'httpd -D FOREGROUND'</span></code></pre>
+</li>
+<li><p>Run a container in the background
+```sh
+$ docker run -d httpd
+e6902788cd79fd5782f2fdb464b9d061f12395aad1aa7a7487822764de3f811c</p>
+</li>
+</ul>
+<p>$ docker ps
+CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS              PORTS               NAMES
+e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours ago         Up 5 hours          80/tcp              awesome_payne</p>
+<p>```</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h3 id="troubleshooting">Troubleshooting</h3>
+<h4 id="docker-logs-container">docker logs $CONTAINER</h4>
+<ul>
+<li>Get logs from a container
+```sh
+$ docker logs e69</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
     <section class="slide-content"><h3 id="how-can-we-actually-use-this-in-our-day-to-day-jobs-">How can we actually use this in our day to day jobs?</h3>
 </section>
   </div>
-  <div class="slide hidden author-slide" id="slide-10">
+  <div class="slide hidden author-slide" id="slide-17">
     <section class="slide-content"><div class="author">
   <h1 class="name">Phil Porada</h1>
     <h3 class="twitter">
