@@ -128,14 +128,14 @@ author:
 * Questions and Answers
 
 --
+
 ### Commands
 #### docker ps
 Show running docker containers
-```sh
+```
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 a870e1ec8f92           httpd               "httpd-foreground"   2 seconds ago       Up 1 seconds        80/tcp              jovial_jones
-
 ```
 
 --
@@ -143,7 +143,7 @@ a870e1ec8f92           httpd               "httpd-foreground"   2 seconds ago   
 ### Troubleshooting
 
 Show docker containers in any state
-```sh
+```
 $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 a870e1ec8f92           httpd                 "httpd-foreground"  2 seconds ago       Up 1 seconds        80/tcp              jovial_jones

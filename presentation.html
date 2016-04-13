@@ -868,19 +868,19 @@ pre .xml .cdata {
     <section class="slide-content"><h3 id="commands">Commands</h3>
 <h4 id="docker-ps">docker ps</h4>
 <p>Show running docker containers</p>
-<pre><code class="lang-sh">$ docker ps
+<pre><code>$ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-a870e1ec8f92           httpd               <span class="hljs-string">"httpd-foreground"</span>   2 seconds ago       Up 1 seconds        80/tcp              jovial_jones</code></pre>
+a870e1ec8f92           httpd               &quot;httpd-foreground&quot;   2 seconds ago       Up 1 seconds        80/tcp              jovial_jones</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-13">
     <section class="slide-content"><h3 id="troubleshooting">Troubleshooting</h3>
 <p>Show docker containers in any state</p>
-<pre><code class="lang-sh">$ docker ps <span class="hljs-_">-a</span>
+<pre><code>$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-a870e1ec8f92           httpd                 <span class="hljs-string">"httpd-foreground"</span>  2 seconds ago       Up 1 seconds        80/tcp              jovial_jones
-0601aae9ccaa           467fe3d6319c       <span class="hljs-string">"/bin/sh -c 'mkdir -p"</span>    1 hour ago         Exited (1) 1 hour ago                 cocky_perlman
-44e21f1e0eae           centos:centos7     <span class="hljs-string">"-it bash"</span>                1 hour ago         Created                               naughty_stallman</code></pre>
+a870e1ec8f92           httpd                 &quot;httpd-foreground&quot;  2 seconds ago       Up 1 seconds        80/tcp              jovial_jones
+0601aae9ccaa           467fe3d6319c       &quot;/bin/sh -c &#39;mkdir -p&quot;    1 hour ago         Exited (1) 1 hour ago                 cocky_perlman
+44e21f1e0eae           centos:centos7     &quot;-it bash&quot;                1 hour ago         Created                               naughty_stallman</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-14">
