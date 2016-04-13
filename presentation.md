@@ -9,6 +9,8 @@ author:
     url: http://greenlancer.com
     email: philporada@gmail.com && pporada@greenlancer.com
     twitter: pgporada
+    github: https://github.com/pgporada
+    weibo: Made with <3 by https://jennyingles.com
 
 --
 
@@ -372,7 +374,7 @@ The total size of that on disk is
 * How to get help
 * <font color="#ff000">Questions and Answers</font>
 
--- center
+--
 
 ### Q/A
 <img src='images/qa.jpg' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img>
