@@ -716,8 +716,11 @@ The total size of that on disk is
 ### How to get help
 #### AKA: Expect to spend a lot of time in these places
 * Freenode IRC: #docker
+* https://docs.docker.com
 * https://github.com/docker/docker/issues
 * Google.
+
+<img src='http://www.laughroulette.com/wp-content/uploads/2014/04/yay-im-a-bridge.jpg' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img>
 
 --
 
