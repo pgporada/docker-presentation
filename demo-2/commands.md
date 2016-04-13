@@ -7,11 +7,14 @@ docker rm myfirstcontainer
 docker rmi #whatever the heck the ID is for that thing
 
 # Now try using a compose file
+docker-compose build
+docker ps
 docker-compose up
 ctrl-c
 
 # Daemonize the process
 docker-compose up -d
+docker ps
 
 # Check the logs
 docker-compose logs -f

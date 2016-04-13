@@ -29,3 +29,7 @@ docker ps
 docker run -d -P nginx
 docker run -d -P nginx
 docker ps
+
+
+# Not much, whalesay :P
+docker exec -i docker/whalesay cowsay "WSU with you?"

@@ -853,6 +853,10 @@ pre .xml .cdata {
 <td style="text-align:left">Container ID/CID</td>
 <td>A SHA256 checksum of the entire image manifest.</td>
 </tr>
+<tr>
+<td style="text-align:left">Names</td>
+<td>Docker containers also get cutesy names in the format of &quot;adjective_surname&quot;</td>
+</tr>
 </tbody>
 </table>
 <p><img src='images/multilayer-container.png' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img></p>
@@ -941,6 +945,31 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </section>
   </div>
   <div class="slide hidden" id="slide-30">
+    <section class="slide-content"><h3 id="docker-commands">Docker Commands</h3>
+<h4 id="docker-exec-it-cid-command">docker exec -it $CID $COMMAND</h4>
+<ul>
+<li>Executes commands inside the container
+```
+$ docker run -d redis
+5e691e541b9f43736ac85d3667450d59f81b092ceb562408f573873aede620ab</li>
+</ul>
+<p>$ docker exec -it 5e69 ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+140: eth0@if141: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether 02:42:0a:fa:01:02 brd ff:ff:ff:ff:ff:ff
+    inet 10.250.1.2/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:aff:fefa:102/64 scope link
+       valid_lft forever preferred_lft forever
+```</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-31">
     <section class="slide-content"><h3 id="troubleshooting">Troubleshooting</h3>
 <h4 id="docker-logs-cid">docker logs $CID</h4>
 <ul>
@@ -949,7 +978,7 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-31">
+  <div class="slide hidden" id="slide-32">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -968,13 +997,13 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-32">
+  <div class="slide hidden  center" id="slide-33">
     <section class="slide-content"><p><br>
 <br></p>
 <h1 id="demo-1">DEMO-1</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-33">
+  <div class="slide hidden" id="slide-34">
     <section class="slide-content"><h3 id="writing-your-own-dockerfiles">Writing your own Dockerfiles</h3>
 <h4 id="dockerfile-commands">Dockerfile Commands</h4>
 <pre><code>    FROM
@@ -990,7 +1019,7 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
     ENTRYPOINT</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-34">
+  <div class="slide hidden" id="slide-35">
     <section class="slide-content"><h3 id="writing-your-own-dockerfiles">Writing your own Dockerfiles</h3>
 <h4 id="example-dockerfile">Example Dockerfile</h4>
 <pre><code>FROM centos:centos7
@@ -1020,7 +1049,7 @@ WORKDIR /home/twitter
 CMD [&quot;earthquake&quot;]</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-35">
+  <div class="slide hidden" id="slide-36">
     <section class="slide-content"><h3 id="developer-workflow">Developer Workflow</h3>
 <p>A developer will need to run multiple applications together to simulate the actual environment.</p>
 <p>Typically this is done in VM(s), but there are some downsides to this</p>
@@ -1031,7 +1060,7 @@ CMD [&quot;earthquake&quot;]</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-36">
+  <div class="slide hidden" id="slide-37">
     <section class="slide-content"><h3 id="developer-workflow">Developer Workflow</h3>
 <p>Benefits of a containerized workflow</p>
 <ul>
@@ -1041,7 +1070,7 @@ CMD [&quot;earthquake&quot;]</code></pre>
 <p>A developer start multiple versions of the same application on the same piece of hardware in moments</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-37">
+  <div class="slide hidden" id="slide-38">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -1061,13 +1090,13 @@ CMD [&quot;earthquake&quot;]</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-38">
+  <div class="slide hidden  center" id="slide-39">
     <section class="slide-content"><p><br>
 <br></p>
 <h1 id="demo-2">DEMO-2</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-39">
+  <div class="slide hidden" id="slide-40">
     <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
 <h4 id="terminology">Terminology</h4>
 <hr style="height:2pt; visibility:hidden;" />
@@ -1108,7 +1137,7 @@ CMD [&quot;earthquake&quot;]</code></pre>
 </table>
 </section>
   </div>
-  <div class="slide hidden" id="slide-40">
+  <div class="slide hidden" id="slide-41">
     <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
 <h4 id="example-of-namespacing">Example of Namespacing</h4>
 <p>Process 1 inside of a container</p>
@@ -1130,7 +1159,7 @@ root         3  0.0  0.0      0     0 ?        S    Apr07   0:12 [ksoftirqd/0]
 root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0H]</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-41">
+  <div class="slide hidden" id="slide-42">
     <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
 <h4 id="selinux-the-docker-socket-other-bad-ideas">SELinux, the Docker socket, other bad ideas</h4>
 <p>Instant root on a host that exposes the Docker socket to it&#39;s containers when SELinux is not enabled</p>
@@ -1142,7 +1171,7 @@ root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-42">
+  <div class="slide hidden" id="slide-43">
     <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
 <h4 id="selinux-the-docker-socket-other-bad-ideas">SELinux, the Docker socket, other bad ideas</h4>
 <p>Instant root on a host that exposes the Docker socket to it&#39;s containers when SELinux is not enabled</p>
@@ -1154,7 +1183,7 @@ root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-43">
+  <div class="slide hidden" id="slide-44">
     <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
 <h4 id="selinux-the-docker-socket-other-bad-ideas">SELinux, the Docker socket, other bad ideas</h4>
 <p>Running Docker on a host without enabling TLS on the daemon.</p>
@@ -1165,7 +1194,7 @@ root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0
 <p><center>Hooray containers are working! ... oh<center></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-44">
+  <div class="slide hidden" id="slide-45">
     <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
 <h4 id="selinux-the-docker-socket-other-bad-ideas">SELinux, the Docker socket, other bad ideas</h4>
 <p>Allowing docker access without sudo, especially on a non-development machine.</p>
@@ -1173,7 +1202,7 @@ root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0
 <p><img src='http://vignette3.wikia.nocookie.net/familyguy/images/9/99/Stewie_gun_mouth_super.jpg/revision/latest?cb=20131211011839' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-45">
+  <div class="slide hidden" id="slide-46">
     <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
 <p>It takes a team to not have this happen to you.</p>
 <ul>
@@ -1186,7 +1215,7 @@ root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-46">
+  <div class="slide hidden" id="slide-47">
     <section class="slide-content"><h3 id="docker-networking">Docker Networking</h3>
 <h4 id="host-network-interface-iptables">Host network interface/iptables</h4>
 <p>Docker creates a bridge interface named <strong>docker0</strong> when the daemon starts.</p>
@@ -1216,7 +1245,7 @@ root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-47">
+  <div class="slide hidden" id="slide-48">
     <section class="slide-content"><h3 id="docker-networking">Docker Networking</h3>
 <h4 id="container-to-container-communication">Container to container communication</h4>
 <ul>
@@ -1226,7 +1255,7 @@ root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-48">
+  <div class="slide hidden" id="slide-49">
     <section class="slide-content"><h3 id="docker-networking">Docker Networking</h3>
 <h4 id="swarm">Swarm</h4>
 <p>Assume the following infrastructure</p>
@@ -1238,7 +1267,7 @@ root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-49">
+  <div class="slide hidden" id="slide-50">
     <section class="slide-content"><h3 id="docker-networking">Docker Networking</h3>
 <h4 id="swarm">Swarm</h4>
 <p>With Docker Swarm, this is now possible with thanks due to overlay networking.</p>
@@ -1250,7 +1279,7 @@ root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-50">
+  <div class="slide hidden" id="slide-51">
     <section class="slide-content"><h3 id="cleanup">Cleanup</h3>
 <p>Docker images can eat up a lot of space, especially if you&#39;re constantly rebuilding and tagging. This size though is</p>
 <pre><code>$ docker images
@@ -1263,7 +1292,7 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 <p>The total size of that on disk is</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-51">
+  <div class="slide hidden" id="slide-52">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -1283,13 +1312,13 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-52">
+  <div class="slide hidden  center" id="slide-53">
     <section class="slide-content"><p><br>
 <br></p>
 <h1 id="demo-3">DEMO-3</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-53">
+  <div class="slide hidden" id="slide-54">
     <section class="slide-content"><h3 id="how-do-we-actually-use-this-in-our-day-to-day-jobs-">How do we actually use this in our day to day jobs?</h3>
 <h4 id="working-on-micro-services">Working on micro-services</h4>
 <ul>
@@ -1301,13 +1330,13 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-54">
+  <div class="slide hidden" id="slide-55">
     <section class="slide-content"><h3 id="how-do-we-actually-use-this-in-our-day-to-day-jobs-">How do we actually use this in our day to day jobs?</h3>
 <h4 id="migrating-from-development-to-qa-staging-prod">Migrating from development to qa/staging/prod</h4>
 <p><img src='http://blog.wercker.com/images/posts/2015-07-28-Dockerfiles-considered-harmful/best-practice-flow.png' style='margin: 0 auto; display: block; width: 1000px; height: 600px'></img></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-55">
+  <div class="slide hidden" id="slide-56">
     <section class="slide-content"><h3 id="the-rest-of-the-docker-universe">The rest of the Docker universe</h3>
 <h4 id="your-homework">Your Homework</h4>
 <ul>
@@ -1320,7 +1349,7 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-56">
+  <div class="slide hidden" id="slide-57">
     <section class="slide-content"><h3 id="how-to-get-help">How to get help</h3>
 <h4 id="aka-expect-to-spend-a-lot-of-time-in-these-places">AKA: Expect to spend a lot of time in these places</h4>
 <ul>
@@ -1330,7 +1359,7 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-57">
+  <div class="slide hidden" id="slide-58">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -1350,12 +1379,12 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-58">
+  <div class="slide hidden" id="slide-59">
     <section class="slide-content"><h3 id="q-a">Q/A</h3>
 <p><img src='images/qa.jpg' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img></p>
 </section>
   </div>
-  <div class="slide hidden author-slide" id="slide-59">
+  <div class="slide hidden author-slide" id="slide-60">
     <section class="slide-content"><div class="author">
   <h1 class="name">Phil Porada</h1>
     <h3 class="twitter">

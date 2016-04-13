@@ -1,5 +1,5 @@
 pizza:
-    build: ../
+    build: .
     dockerfile: Dockerfile
     hostname: pizza
     ports:

@@ -238,6 +238,7 @@ author:
 | Registry | Centralized place to store containers. |
 | Manifest | Contains the name, tag, history, etc of an image. |
 | Container ID/CID |A SHA256 checksum of the entire image manifest. |
+| Names | Docker containers also get cutesy names in the format of "adjective_surname" |
 
 <img src='images/multilayer-container.png' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img>
 
@@ -322,6 +323,30 @@ e6902788cd79fd5782f2fdb464b9d061f12395aad1aa7a7487822764de3f811c
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS              PORTS               NAMES
 e6902788cd79        httpd               "httpd-foreground"   5 hours ago         Up 5 hours          80/tcp              awesome_payne
+```
+
+--
+
+### Docker Commands
+#### docker exec -it $CID $COMMAND
+* Executes commands inside the container
+```
+$ docker run -d redis
+5e691e541b9f43736ac85d3667450d59f81b092ceb562408f573873aede620ab
+
+$ docker exec -it 5e69 ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+140: eth0@if141: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether 02:42:0a:fa:01:02 brd ff:ff:ff:ff:ff:ff
+    inet 10.250.1.2/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:aff:fefa:102/64 scope link
+       valid_lft forever preferred_lft forever
 ```
 
 --
