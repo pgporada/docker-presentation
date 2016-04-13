@@ -114,15 +114,15 @@ author:
 
 ### Agenda
 * Requirements, Terminology, Intro to Docker, & Expectation Management
-* <font color="#ff000">Docker Commands, Troubleshooting</font>
+* <font color="#ff000">Docker Commands</font>
 * Troubleshooting
-* ===== DEMO =====
+* ===== DEMO-1 =====
 * Writing your own Dockerfiles
 * Dockerfile deep dive
-* ===== DEMO =====
+* ===== DEMO-2 =====
 * Docker Security
 * Docker Networking
-* ===== DEMO =====
+* ===== DEMO-3 =====
 * Developer Workflow
 * Day to day Docker usage @ GreenLancer
 * Questions and Answers
@@ -182,9 +182,46 @@ e6902788cd79        httpd               "httpd-foreground"   5 hours ago        
 * Get logs from a container
 ```sh
 $ docker logs e69
+```
 
 --
 
+### Agenda
+* Requirements, Terminology, Intro to Docker, & Expectation Management
+* Docker Commands
+* Troubleshooting
+* <font color="#ff0000">===== DEMO-1 =====</font>
+* Writing your own Dockerfiles
+* Dockerfile deep dive
+* ===== DEMO-2 =====
+* Docker Security
+* Docker Networking
+* ===== DEMO-3 =====
+* Developer Workflow
+* Day to day Docker usage @ GreenLancer
+* Questions and Answers
+
+-- center
+
+# DEMO-1
+
+--
+
+* Requirements, Terminology, Intro to Docker, & Expectation Management
+* Docker Commands
+* Troubleshooting
+* <font color="#ff0000">===== DEMO-1 =====</font>
+* Writing your own Dockerfiles
+* Dockerfile deep dive
+* ===== DEMO-2 =====
+* Docker Security
+* Docker Networking
+* ===== DEMO-3 =====
+* Developer Workflow
+* Day to day Docker usage @ GreenLancer
+* Questions and Answers
+
+--
 
 ### How can we actually use this in our day to day jobs?
 
