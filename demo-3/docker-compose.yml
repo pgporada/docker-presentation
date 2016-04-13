@@ -1,1 +1,24 @@
-2 containers with a reference to each other
+version: '2'
+
+services:
+    nginx:
+        build: .
+        ports:
+            - "80:80"
+            - "443:443"
+        restart: always
+        networks:
+            - demo3
+
+    php-fpm:
+        image: php:fpm
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./php/index.php:/usr/share/nginx/html/index.php
+        restart: always
+        networks:
+            - demo3
+
+networks:
+    demo3:
