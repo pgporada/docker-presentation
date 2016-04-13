@@ -66,6 +66,28 @@ author:
 
 --
 
+### Container History
+* chroot 1982
+* BSD Jails 200
+* Solaris Zones 2004
+* LXC since 2008
+* Docker 2013
+* More to come, but there is an Open Container Standard!
+
+--
+
+### Container History
+* chroot 1982
+* BSD Jails 200
+* Solaris Zones 2004
+* LXC since 2008
+* Docker 2013
+* More to come, but there is an Open Container Standard!
+
+<img src='https://imgs.xkcd.com/comics/standards.png' style='margin: 0 auto; display: block; width: 800px; height: 400px'></img>
+
+--
+
 ### What is Docker?
 * Started in 2013 @ dotCloud
 
@@ -159,6 +181,17 @@ author:
 * Rollbacks are near instant (to humans)
 * Containers will only become more prevalent as time goes on
 * * Microsoft has even embraced them
+
+--
+
+### Why even use it?
+
+* Deployments become easier
+* Build artifacts work on every system
+* Rollbacks are near instant (to humans)
+* Containers will only become more prevalent as time goes on
+* * Microsoft has even embraced them
+* You can put legacy applications/software in a locked down container and still upgrade the host that the container runs on. Applications should not halt infrastructure upgrades.
 
 --
 
@@ -376,6 +409,21 @@ CMD ["earthquake"]
 --
 
 ### Developer Workflow
+A developer will need to run multiple applications together to simulate the actual environment.
+
+Typically this is done in VM(s), but there are some downsides to this
+* Multiple VMs can become ram/cpu/disk intensive just to run the OS
+* When a change is made to the VM, rollback is a destruction and re-provisioning of the VM
+* If using a single VM, it's not easy to run multiple database or application versions concurrently
+
+--
+
+### Developer Workflow
+Benefits of a containerized workflow
+* Containers are far lighter than a VM
+* Resources can be limited via namespaces/cgroups
+
+A developer start multiple versions of the same application on the same piece of hardware in moments
 
 --
 
@@ -411,8 +459,8 @@ CMD ["earthquake"]
 | :----------- | ----------- |
 | Namespaces | Provides a view of the system that make the container appear to have all of the hosts resources. Examples are PIDs, Mounts, IPC, and Network. |
 | User Namespaces | Distinguish container privileged vs host privileged root user. |
-| Cgroups | |
-| Capabilities | |
+| Cgroups | Constrain what resources a container is allowed to use. |
+| Capabilities | What the container 'root' can do such as run ptrace or chown. |
 | AppArmor & SELinux | Allow containers to actually contain. |
 | Seccomp | Acts as a syscall firewall. When a userland process wants to communicate with the kernel, communication travels through the syscall interface. This includes opening files, loading kernel modules, etc|
 
