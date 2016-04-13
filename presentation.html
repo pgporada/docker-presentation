@@ -20,172 +20,24 @@ magenta     : #f92672
 light green : #a6e22e
 */
 
-/* Local Fonts */
-@font-face {
-  font-family: 'Anonymous';
-  font-style: normal;
-  font-weight: 300;
-  src: url('fonts/anonymous/anonymous.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: url('fonts/opensans/300.woff2') format('woff2'),
-       url('fonts/opensans/300.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/opensans/400.woff2') format('woff2'),
-       url('fonts/opensans/400.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: url('fonts/opensans/600.woff2') format('woff2'),
-       url('fonts/opensans/600.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: url('fonts/opensans/700.woff2') format('woff2'),
-       url('fonts/opensans/700.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 800;
-  src: url('fonts/opensans/800.woff2') format('woff2'),
-       url('fonts/opensans/800.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 300;
-  src: url('fonts/opensans/300i.woff2') format('woff2'),
-       url('fonts/opensans/300i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: url('fonts/opensans/400i.woff2') format('woff2'),
-       url('fonts/opensans/400i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 600;
-  src: url('fonts/opensans/600i.woff2') format('woff2'),
-       url('fonts/opensans/600i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 700;
-  src: url('fonts/opensans/700i.woff2') format('woff2'),
-       url('fonts/opensans/700i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 800;
-  src: url('fonts/opensans/800i.woff2') format('woff2'),
-       url('fonts/opensans/800i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/merriweather/400.woff2') format('woff2'),
-       url('fonts/merriweather/400.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 700;
-  src: url('fonts/merriweather/700.woff2') format('woff2'),
-       url('fonts/merriweather/700.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 900;
-  src: url('fonts/merriweather/900.woff2') format('woff2'),
-       url('fonts/merriweather/900.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 400;
-  src: url('fonts/merriweather/400i.woff2') format('woff2'),
-       url('fonts/merriweather/400i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 700;
-  src: url('fonts/merriweather/700i.woff2') format('woff2'),
-       url('fonts/merriweather/700i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 900;
-  src: url('fonts/merriweather/900i.woff2') format('woff2'),
-       url('fonts/merriweather/900i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/fira/400.woff2') format('woff2'),
-       url('fonts/fira/400.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 500;
-  src: url('fonts/fira/500.woff2') format('woff2'),
-       url('fonts/fira/500.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 700;
-  src: url('fonts/fira/700.woff2') format('woff2'),
-       url('fonts/fira/700.woff') format('woff');
-}
-
 /* Theme Styles */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Helvetica', 'Arial', sans-serif;
   font-size: 100%;
   color: #fafafa;
   background-color: #191919;
+  border-top: 140px solid black;
+  margin: 0;
+}
+
+body::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 110px;
+  background-color: black;
 }
 
 /* Custom Slide Styles */
@@ -219,7 +71,7 @@ img.badge {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 100px;
+  padding: 40px;
 }
 
 .slide-content {
@@ -287,7 +139,7 @@ img.badge {
 h1,
 h2,
 h3 {
-  font-family: 'Merriweather', serif;
+  font-family: 'Monaco', 'Lucida Console', serif;
 }
 
 h1 {
@@ -374,7 +226,7 @@ blockquote p {
 
 a {
   text-decoration: none;
-  color: #66d9ef;
+  color: #CB5EFF;
 }
 
 a:hover {
@@ -402,13 +254,13 @@ table th {
   top: 0;
   right: 0;
   left: 0;
-  height: 3px;
+  height: 8px;
 }
 
 .progress-bar {
-  height: 3px;
+  height: 8px;
   width: 0;
-  background-color: #a6e22e;
+  background-color: #00A514;
   -webkit-transition: width .15s ease-out;
      -moz-transition: width .15s ease-out;
        -o-transition: width .15s ease-out;
@@ -424,7 +276,7 @@ code {
   padding: .1em .35em;
   font-family: 'Fira Mono';
   /* color: #fafafa; */
-  font-family: 'Anonymous', monospace;
+  font-family: 'Monaco', monospace;
   color: white;
   background-color: #272822;
   border-radius: 3px;
@@ -438,7 +290,7 @@ pre code {
   overflow-y: hidden;
   /*background: #272822;*/
   background: #292929;
-  font-family: 'Anonymous', monospace;
+  font-family: 'Monaco', monospace;
   color: #ababab;
   border-left: 8px solid #00A514;
 }
@@ -663,7 +515,7 @@ pre .xml .cdata {
   </div>
 
   <div class="slide  center" id="slide-1">
-    <section class="slide-content"><h3 id="docker-there-and-back-again">Docker: There and Back Again</h3>
+    <section class="slide-content"><h1 id="docker-there-and-back-again">Docker: There and Back Again</h1>
 <p><img src='images/detroit.png' style='margin: 0 auto; display: block'></img></p>
 </section>
   </div>
@@ -713,11 +565,11 @@ pre .xml .cdata {
 <li>Troubleshooting</li>
 <li>===== DEMO =====</li>
 <li>Writing your own Dockerfiles</li>
-<li>Dockerfile deep dive</li>
 <li>Developer Workflow</li>
 <li>===== DEMO =====</li>
 <li>Docker Security</li>
 <li>Docker Networking</li>
+<li>Cleanup</li>
 <li>===== DEMO =====</li>
 <li>Day to day Docker usage @ GreenLancer</li>
 <li>Questions and Answers</li>
@@ -726,32 +578,13 @@ pre .xml .cdata {
   </div>
   <div class="slide hidden" id="slide-7">
     <section class="slide-content"><h3 id="docker-requirements">Docker Requirements</h3>
-<table>
-<thead>
-<tr>
-<th><font color="#00cc00">Runtime Dependency</font></th>
-<th><font color="#00cc00">Version</font></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>iptables</td>
-<td>&gt;= 1.4</td>
-</tr>
-<tr>
-<td>git</td>
-<td>&gt;= 1.7</td>
-</tr>
-<tr>
-<td>procps (ps)</td>
-<td>any</td>
-</tr>
-<tr>
-<td>xz compression engine</td>
-<td>&gt;= 4.9</td>
-</tr>
-</tbody>
-</table>
+<p><p>&nbsp;</p>
+| <font color="#00cc00">Runtime Dependency</font> | <font color="#00cc00">Version</font> |
+| --- | --- |
+| iptables    | &gt;= 1.4 |
+| git         | &gt;= 1.7 |
+| procps (ps) | any |
+| xz compression engine | &gt;= 4.9 |</p>
 <hr style="height:2pt; visibility:hidden;" />
 
 <table>
@@ -853,11 +686,11 @@ pre .xml .cdata {
 <li>Troubleshooting</li>
 <li>===== DEMO-1 =====</li>
 <li>Writing your own Dockerfiles</li>
-<li>Dockerfile deep dive</li>
 <li>Developer Workflow</li>
 <li>===== DEMO-2 =====</li>
 <li>Docker Security</li>
 <li>Docker Networking</li>
+<li>Cleanup</li>
 <li>===== DEMO-3 =====</li>
 <li>Day to day Docker usage @ GreenLancer</li>
 <li>Questions and Answers</li>
@@ -867,7 +700,7 @@ pre .xml .cdata {
   <div class="slide hidden" id="slide-12">
     <section class="slide-content"><h3 id="commands">Commands</h3>
 <h4 id="docker-ps">docker ps</h4>
-<p>Show running docker containers</p>
+<p>Process oriented API that shows running docker containers</p>
 <pre><code>$ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 a870e1ec8f92           httpd               &quot;httpd-foreground&quot;   2 seconds ago       Up 1 seconds        80/tcp              jovial_jones</code></pre>
@@ -923,11 +756,11 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 <li>Troubleshooting</li>
 <li><font color="#ff0000">===== DEMO-1 =====</font></li>
 <li>Writing your own Dockerfiles</li>
-<li>Dockerfile deep dive</li>
 <li>Developer Workflow</li>
 <li>===== DEMO-2 =====</li>
 <li>Docker Security</li>
 <li>Docker Networking</li>
+<li>Cleanup</li>
 <li>===== DEMO-3 =====</li>
 <li>Day to day Docker usage @ GreenLancer</li>
 <li>Questions and Answers</li>
@@ -946,10 +779,11 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 <li>Troubleshooting</li>
 <li>===== DEMO-1 =====</li>
 <li><font color="#ff0000">Writing your own Dockerfiles</font></li>
-<li>Dockerfile deep dive</li>
+<li>Developer Workflow</li>
 <li>===== DEMO-2 =====</li>
 <li>Docker Security</li>
 <li>Docker Networking</li>
+<li>Cleanup</li>
 <li>===== DEMO-3 =====</li>
 <li>Developer Workflow</li>
 <li>Day to day Docker usage @ GreenLancer</li>
@@ -963,10 +797,6 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </section>
   </div>
   <div class="slide hidden" id="slide-20">
-    <section class="slide-content"><h3 id="dockerfile-deep-dive">Dockerfile Deep Dive</h3>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-21">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -974,11 +804,11 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 <li>Troubleshooting</li>
 <li>===== DEMO-1 =====</li>
 <li>Writing your own Dockerfiles</li>
-<li><font color="#ff0000">Dockerfile deep dive</font></li>
 <li>Developer Workflow</li>
-<li>===== DEMO-2 =====</li>
+<li><font color='#ff0000'>===== DEMO-2 =====</font></li>
 <li>Docker Security</li>
 <li>Docker Networking</li>
+<li>Cleanup</li>
 <li>===== DEMO-3 =====</li>
 <li>Day to day Docker usage @ GreenLancer</li>
 <li>How to get help</li>
@@ -986,11 +816,93 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
+  <div class="slide hidden  center" id="slide-21">
+    <section class="slide-content"><h1 id="demo-2">DEMO-2</h1>
+</section>
+  </div>
   <div class="slide hidden" id="slide-22">
-    <section class="slide-content"><h3 id="how-do-we-actually-use-this-in-our-day-to-day-jobs-">How do we actually use this in our day to day jobs?</h3>
+    <section class="slide-content"><h3 id="agenda">Agenda</h3>
+<ul>
+<li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
+<li>Docker Commands</li>
+<li>Troubleshooting</li>
+<li>===== DEMO-1 =====</li>
+<li>Writing your own Dockerfiles</li>
+<li>Developer Workflow</li>
+<li>===== DEMO-2 =====</li>
+<li><font color='#ff0000'>Docker Security</font></li>
+<li>Docker Networking</li>
+<li>Cleanup</li>
+<li>===== DEMO-3 =====</li>
+<li>Day to day Docker usage @ GreenLancer</li>
+<li>How to get help</li>
+<li>Questions and Answers</li>
+</ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h3 id="docker-networking">Docker Networking</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h3 id="cleanup">Cleanup</h3>
+<p>Docker images can eat up a lot of space, especially if you&#39;re constantly rebuilding and tagging.</p>
+<pre><code>$ docker images
+REPOSITORY                              TAG                  IMAGE ID            CREATED             SIZE
+greenlancer/jenkins-slave               latest               3bd6965573c9        5 hours ago         854.2 MB
+greenlancer/jenkins-slave               0.4.0                c41c6fd546e9        30 hours ago        716.1 MB
+greenlancer/jenkins-slave               0.3.0                122f48e241e5        30 hours ago        535.5 MB
+greenlancer/jenkins-slave               0.2.0                7d930fd16086        30 hours ago        401.6 MB
+greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5        31 hours ago        401.6 MB</code></pre>
+<p>The total size of that on disk is</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
+<h4 id="terminology">Terminology</h4>
+<hr style="height:2pt; visibility:hidden;" />
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Docker Term</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Namespaces</td>
+<td>Provides a view of the system that make the container appear to have all of the hosts resources. Examples are PIDs, Mounts, IPC, and Network.</td>
+</tr>
+<tr>
+<td style="text-align:left">User Namespaces</td>
+<td>Distinguish container privileged vs host privileged root user.</td>
+</tr>
+<tr>
+<td style="text-align:left">Cgroups</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Capabilities</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">AppArmor &amp; SELinux</td>
+<td>Allow containers to actually contain.</td>
+</tr>
+<tr>
+<td style="text-align:left">Seccomp</td>
+<td>Acts as a syscall firewall. When a userland process wants to communicate with the kernel, communication travels through the syscall interface. This includes opening files, loading kernel modules, etc</td>
+</tr>
+</tbody>
+</table>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><h3 id="how-do-we-actually-use-this-in-our-day-to-day-jobs-">How do we actually use this in our day to day jobs?</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-27">
     <section class="slide-content"><h3 id="how-to-get-help">How to get help</h3>
 <ul>
 <li>Freenode IRC: #docker</li>
@@ -999,7 +911,7 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-24">
+  <div class="slide hidden" id="slide-28">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -1007,11 +919,11 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 <li>Troubleshooting</li>
 <li>===== DEMO-1 =====</li>
 <li>Writing your own Dockerfiles</li>
-<li>Dockerfile deep dive</li>
 <li>Developer Workflow</li>
 <li>===== DEMO-2 =====</li>
 <li>Docker Security</li>
 <li>Docker Networking</li>
+<li>Cleanup</li>
 <li>===== DEMO-3 =====</li>
 <li>Day to day Docker usage @ GreenLancer</li>
 <li>How to get help</li>
@@ -1019,12 +931,12 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-25">
+  <div class="slide hidden  center" id="slide-29">
     <section class="slide-content"><h1 id="q-a">Q/A</h1>
 <p><img src='images/qa.jpg' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img></p>
 </section>
   </div>
-  <div class="slide hidden author-slide" id="slide-26">
+  <div class="slide hidden author-slide" id="slide-30">
     <section class="slide-content"><div class="author">
   <h1 class="name">Phil Porada</h1>
     <h3 class="twitter">

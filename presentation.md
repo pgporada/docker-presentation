@@ -12,7 +12,7 @@ author:
 
 -- center
 
-### Docker: There and Back Again
+# Docker: There and Back Again
 <img src='images/detroit.png' style='margin: 0 auto; display: block'></img>
 
 --
@@ -53,11 +53,11 @@ author:
 * Troubleshooting
 * ===== DEMO =====
 * Writing your own Dockerfiles
-* Dockerfile deep dive
 * Developer Workflow
 * ===== DEMO =====
 * Docker Security
 * Docker Networking
+* Cleanup
 * ===== DEMO =====
 * Day to day Docker usage @ GreenLancer
 * Questions and Answers
@@ -65,6 +65,7 @@ author:
 --
 
 ### Docker Requirements
+<p>&nbsp;</p>
 | <font color="#00cc00">Runtime Dependency</font> | <font color="#00cc00">Version</font> |
 | --- | --- |
 | iptables    | >= 1.4 |
@@ -118,11 +119,11 @@ author:
 * Troubleshooting
 * ===== DEMO-1 =====
 * Writing your own Dockerfiles
-* Dockerfile deep dive
 * Developer Workflow
 * ===== DEMO-2 =====
 * Docker Security
 * Docker Networking
+* Cleanup
 * ===== DEMO-3 =====
 * Day to day Docker usage @ GreenLancer
 * Questions and Answers
@@ -131,7 +132,7 @@ author:
 
 ### Commands
 #### docker ps
-Show running docker containers
+Process oriented API that shows running docker containers
 ```
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
@@ -191,11 +192,11 @@ $ docker logs e69
 * Troubleshooting
 * <font color="#ff0000">===== DEMO-1 =====</font>
 * Writing your own Dockerfiles
-* Dockerfile deep dive
 * Developer Workflow
 * ===== DEMO-2 =====
 * Docker Security
 * Docker Networking
+* Cleanup
 * ===== DEMO-3 =====
 * Day to day Docker usage @ GreenLancer
 * Questions and Answers
@@ -212,10 +213,11 @@ $ docker logs e69
 * Troubleshooting
 * ===== DEMO-1 =====
 * <font color="#ff0000">Writing your own Dockerfiles</font>
-* Dockerfile deep dive
+* Developer Workflow
 * ===== DEMO-2 =====
 * Docker Security
 * Docker Networking
+* Cleanup
 * ===== DEMO-3 =====
 * Developer Workflow
 * Day to day Docker usage @ GreenLancer
@@ -228,7 +230,25 @@ $ docker logs e69
 
 --
 
-### Dockerfile Deep Dive
+### Agenda
+* Requirements, Terminology, Intro to Docker, & Expectation Management
+* Docker Commands
+* Troubleshooting
+* ===== DEMO-1 =====
+* Writing your own Dockerfiles
+* Developer Workflow
+* <font color='#ff0000'>===== DEMO-2 =====</font>
+* Docker Security
+* Docker Networking
+* Cleanup
+* ===== DEMO-3 =====
+* Day to day Docker usage @ GreenLancer
+* How to get help
+* Questions and Answers
+
+-- center
+
+# DEMO-2
 
 --
 
@@ -238,15 +258,53 @@ $ docker logs e69
 * Troubleshooting
 * ===== DEMO-1 =====
 * Writing your own Dockerfiles
-* <font color="#ff0000">Dockerfile deep dive</font>
 * Developer Workflow
 * ===== DEMO-2 =====
-* Docker Security
+* <font color='#ff0000'>Docker Security</font>
 * Docker Networking
+* Cleanup
 * ===== DEMO-3 =====
 * Day to day Docker usage @ GreenLancer
 * How to get help
 * Questions and Answers
+
+--
+
+### Docker Networking
+
+--
+
+### Cleanup
+
+Docker images can eat up a lot of space, especially if you're constantly rebuilding and tagging.
+```
+$ docker images
+REPOSITORY                              TAG                  IMAGE ID            CREATED             SIZE
+greenlancer/jenkins-slave               latest               3bd6965573c9        5 hours ago         854.2 MB
+greenlancer/jenkins-slave               0.4.0                c41c6fd546e9        30 hours ago        716.1 MB
+greenlancer/jenkins-slave               0.3.0                122f48e241e5        30 hours ago        535.5 MB
+greenlancer/jenkins-slave               0.2.0                7d930fd16086        30 hours ago        401.6 MB
+greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5        31 hours ago        401.6 MB
+```
+
+The total size of that on disk is
+
+
+
+--
+
+### Docker Security
+#### Terminology
+<hr style="height:2pt; visibility:hidden;" />
+
+|  Docker Term | Explanation  |
+| :-- | -- |
+| Namespaces | Provides a view of the system that make the container appear to have all of the hosts resources. Examples are PIDs, Mounts, IPC, and Network. |
+| User Namespaces | Distinguish container privileged vs host privileged root user. |
+| Cgroups | |
+| Capabilities | |
+| AppArmor & SELinux | Allow containers to actually contain. |
+| Seccomp | Acts as a syscall firewall. When a userland process wants to communicate with the kernel, communication travels through the syscall interface. This includes opening files, loading kernel modules, etc|
 
 --
 
@@ -267,11 +325,11 @@ $ docker logs e69
 * Troubleshooting
 * ===== DEMO-1 =====
 * Writing your own Dockerfiles
-* Dockerfile deep dive
 * Developer Workflow
 * ===== DEMO-2 =====
 * Docker Security
 * Docker Networking
+* Cleanup
 * ===== DEMO-3 =====
 * Day to day Docker usage @ GreenLancer
 * How to get help
