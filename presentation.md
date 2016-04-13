@@ -65,7 +65,7 @@ author:
 --
 
 ### Docker Requirements
-<p>&nbsp;</p>
+
 | <font color="#00cc00">Runtime Dependency</font> | <font color="#00cc00">Version</font> |
 | --- | --- |
 | iptables    | >= 1.4 |
