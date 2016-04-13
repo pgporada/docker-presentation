@@ -607,7 +607,11 @@ pre .xml .cdata {
 <br>
 <br>
 <br>
-* If that system runs a 64bit Linux/FreeBSD/Solaris kernel</li>
+<br>
+<br>
+* If that system runs a 64bit Linux/FreeBSD/Solaris kernel
+<br>
+** or an NT kernel.. soon</li>
 </ul>
 </section>
   </div>
@@ -628,41 +632,31 @@ pre .xml .cdata {
 <li>Written in Go</li>
 <li>Finally allows code to be written once and ran on any* system</li>
 <li>Huge traction on Github - 30,368 stars as of 04/12/2016</li>
-<li>Every big tech company and their brothers/sisters are creating PaaS&#39; utilizing container technology</li>
+<li>Every big tech company and their brothers/sisters are creating PaaS&#39; utilizing container technology
+<img src='https://tctechcrunch2011.files.wordpress.com/2015/06/dsc00365.jpg?w=1024&h=680' style='margin: 0 auto; display: block; width: 1024px; height: 680px'></img></li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-12">
-    <section class="slide-content"><h3 id="what-is-docker-">What is Docker?</h3>
+    <section class="slide-content"><h3 id="what-docker-is-not">What Docker is NOT</h3>
 <ul>
-<li>Started in 2013 @ dotCloud</li>
-<li>Written in Go</li>
-<li>Finally allows code to be written once and ran on any* system</li>
-<li>Huge traction on Github - 30,368 stars as of 04/12/2016</li>
-<li>Every big tech company and their brothers/sisters are creating PaaS&#39; utilizing container technology</li>
-<li><ul>
-<li>RedHat (Project Atomic)</li>
-</ul>
-</li>
-<li><ul>
-<li>Cisco (Mantl)</li>
-</ul>
-</li>
-<li><ul>
-<li>Microsoft (Containers on Windows, Bash on Ubuntu.. on Windows)</li>
+<li>Containers are not VMs nor will ever be<ul>
+<li><strong>VMs</strong>: Think of each VM as an individual house</li>
+<li><strong>Containers</strong>: Think of them as units in an apartment</li>
 </ul>
 </li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-13">
-    <section class="slide-content"><h3 id="what-is-docker-">What is Docker?</h3>
+    <section class="slide-content"><h3 id="what-docker-is-not">What Docker is NOT</h3>
 <ul>
-<li>Started in 2013 @ dotCloud</li>
-<li>Written in Go</li>
-<li>Finally allows code to be written once and ran on any* system</li>
-<li>Huge traction on Github - 30,368 stars as of 04/12/2016</li>
-<li>Every big tech company and their brothers/sisters are creating PaaS&#39; utilizing container technology</li>
+<li>Containers are not VMs nor will ever be<ul>
+<li><strong>VMs</strong>: Think of each VM as an individual house</li>
+<li><strong>Containers</strong>: Think of them as units in an apartment</li>
+</ul>
+</li>
+<li>The end of operations</li>
 </ul>
 </section>
   </div>
@@ -674,10 +668,25 @@ pre .xml .cdata {
 <li><strong>Containers</strong>: Think of them as units in an apartment</li>
 </ul>
 </li>
+<li>The end of operations</li>
+<li>A walk in the park
+<img src='https://pbs.twimg.com/media/Ca4iAN7UUAAIB_0.jpg' style='margin: 0 auto; display: block; width: 650px; height: 650px'></img></li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h3 id="what-docker-is-not">What Docker is NOT</h3>
+<ul>
+<li>Containers are not VMs nor will ever be<ul>
+<li><strong>VMs</strong>: Think of each VM as an individual house</li>
+<li><strong>Containers</strong>: Think of them as units in an apartment</li>
+</ul>
+</li>
+<li>The end of operations</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
     <section class="slide-content"><h3 id="docker-requirements">Docker Requirements</h3>
 <table>
 <thead>
@@ -739,7 +748,7 @@ pre .xml .cdata {
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-16">
+  <div class="slide hidden" id="slide-17">
     <section class="slide-content"><h3 id="docker-terminology">Docker Terminology</h3>
 <hr style="height:2pt; visibility:hidden;" />
 
@@ -780,7 +789,7 @@ pre .xml .cdata {
 <p><img src='images/multilayer-container.png' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-17">
+  <div class="slide hidden" id="slide-18">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -799,7 +808,7 @@ pre .xml .cdata {
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-18">
+  <div class="slide hidden" id="slide-19">
     <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-info">docker info</h4>
 <ul>
@@ -830,7 +839,7 @@ Total Memory: 7.707 GiB</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-19">
+  <div class="slide hidden" id="slide-20">
     <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-ps">docker ps</h4>
 <ul>
@@ -841,7 +850,7 @@ a870e1ec8f92           httpd               &quot;httpd-foreground&quot;   2 seco
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-20">
+  <div class="slide hidden" id="slide-21">
     <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-ps-a">docker ps -a</h4>
 <ul>
@@ -854,7 +863,7 @@ a870e1ec8f92           httpd                 &quot;httpd-foreground&quot;  2 sec
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-21">
+  <div class="slide hidden" id="slide-22">
     <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-run-cid">docker run $CID</h4>
 <ul>
@@ -867,7 +876,7 @@ AH00558: httpd: Could not reliably determine the server&#39;s fully qualified do
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-22">
+  <div class="slide hidden" id="slide-23">
     <section class="slide-content"><h3 id="docker-commands">Docker commands</h3>
 <h4 id="docker-run-d-cid">docker run -d $CID</h4>
 <ul>
@@ -882,7 +891,7 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 ```</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-23">
+  <div class="slide hidden" id="slide-24">
     <section class="slide-content"><h3 id="troubleshooting">Troubleshooting</h3>
 <h4 id="docker-logs-cid">docker logs $CID</h4>
 <ul>
@@ -891,7 +900,7 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-24">
+  <div class="slide hidden" id="slide-25">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -910,31 +919,10 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-25">
+  <div class="slide hidden  center" id="slide-26">
     <section class="slide-content"><p><br>
 <br></p>
 <h1 id="demo-1">DEMO-1</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-26">
-    <section class="slide-content"><h3 id="agenda">Agenda</h3>
-<ul>
-<li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
-<li>Docker Commands</li>
-<li>Troubleshooting</li>
-<li>===== DEMO-1 =====</li>
-<li><font color="#ff0000">Writing your own Dockerfiles</font></li>
-<li>Developer Workflow</li>
-<li>===== DEMO-2 =====</li>
-<li>Docker Security</li>
-<li>Docker Networking</li>
-<li>Cleanup</li>
-<li>===== DEMO-3 =====</li>
-<li>Developer Workflow</li>
-<li>Day to day Docker usage @ GreenLancer</li>
-<li>How to get help</li>
-<li>Questions and Answers</li>
-</ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-27">
@@ -942,6 +930,10 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </section>
   </div>
   <div class="slide hidden" id="slide-28">
+    <section class="slide-content"><h3 id="developer-workflow">Developer Workflow</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-29">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -961,50 +953,13 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </ul>
 </section>
   </div>
-  <div class="slide hidden  center" id="slide-29">
+  <div class="slide hidden  center" id="slide-30">
     <section class="slide-content"><p><br>
 <br></p>
 <h1 id="demo-2">DEMO-2</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-30">
-    <section class="slide-content"><h3 id="agenda">Agenda</h3>
-<ul>
-<li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
-<li>Docker Commands</li>
-<li>Troubleshooting</li>
-<li>===== DEMO-1 =====</li>
-<li>Writing your own Dockerfiles</li>
-<li>Developer Workflow</li>
-<li>===== DEMO-2 =====</li>
-<li><font color='#ff0000'>Docker Security</font></li>
-<li>Docker Networking</li>
-<li>Cleanup</li>
-<li>===== DEMO-3 =====</li>
-<li>Day to day Docker usage @ GreenLancer</li>
-<li>How to get help</li>
-<li>Questions and Answers</li>
-</ul>
-</section>
-  </div>
   <div class="slide hidden" id="slide-31">
-    <section class="slide-content"><h3 id="docker-networking">Docker Networking</h3>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-32">
-    <section class="slide-content"><h3 id="cleanup">Cleanup</h3>
-<p>Docker images can eat up a lot of space, especially if you&#39;re constantly rebuilding and tagging. This size though is</p>
-<pre><code>$ docker images
-REPOSITORY                              TAG                  IMAGE ID            CREATED             SIZE
-greenlancer/jenkins-slave               latest               3bd6965573c9        5 hours ago         854.2 MB
-greenlancer/jenkins-slave               0.4.0                c41c6fd546e9        30 hours ago        716.1 MB
-greenlancer/jenkins-slave               0.3.0                122f48e241e5        30 hours ago        535.5 MB
-greenlancer/jenkins-slave               0.2.0                7d930fd16086        30 hours ago        401.6 MB
-greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5        31 hours ago        401.6 MB</code></pre>
-<p>The total size of that on disk is</p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-33">
     <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
 <h4 id="terminology">Terminology</h4>
 <hr style="height:2pt; visibility:hidden;" />
@@ -1045,11 +1000,132 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </table>
 </section>
   </div>
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
+<h4 id="example-of-namespacing">Example of Namespacing</h4>
+<p>Process 1 inside of a container</p>
+<pre><code>$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+b60d110ad078        nginx               &quot;nginx -g &#39;daemon off&quot;   4 minutes ago       Up 3 minutes        80/tcp, 443/tcp     evil_perlman</code></pre>
+<pre><code>$ docker exec -i b60 ps
+  PID TTY          TIME CMD
+    1 ?        00:00:00 nginx
+   10 ?        00:00:00 ps</code></pre>
+<pre><code>$ docker exec -i b60 hostname
+b60d110ad078</code></pre>
+<p>vs root on my host</p>
+<pre><code>root@laptappy:~# ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 185172  4496 ?        Ss   Apr07   0:06 /sbin/init splash
+root         2  0.0  0.0      0     0 ?        S    Apr07   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    Apr07   0:12 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S&lt;   Apr07   0:00 [kworker/0:0H]</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-33">
+    <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
+<h4 id="selinux-the-docker-socket-other-bad-ideas">SELinux, the Docker socket, other bad ideas</h4>
+<p>Instant root on a host that exposes the Docker socket to it&#39;s containers when SELinux is not enabled</p>
+<pre><code>docker run -ti --privileged -v /:/host fedora chroot /host</code></pre>
+<p><img src='images/dw1.png' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img></p>
+<p><center>Dan Walsh - creator of SELinux<center></p>
+<ul>
+<li><a href="http://danwalsh.livejournal.com/74095.html">http://danwalsh.livejournal.com/74095.html</a></li>
+</ul>
+</section>
+  </div>
   <div class="slide hidden" id="slide-34">
-    <section class="slide-content"><h3 id="how-do-we-actually-use-this-in-our-day-to-day-jobs-">How do we actually use this in our day to day jobs?</h3>
+    <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
+<h4 id="selinux-the-docker-socket-other-bad-ideas">SELinux, the Docker socket, other bad ideas</h4>
+<p>Instant root on a host that exposes the Docker socket to it&#39;s containers when SELinux is not enabled</p>
+<pre><code>docker run -ti --privileged -v /:/host fedora chroot /host</code></pre>
+<p><img src='images/dw2.png' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img></p>
+<p><center>Dan Walsh - creator of SELinux<center></p>
+<ul>
+<li><a href="http://danwalsh.livejournal.com/74095.html">http://danwalsh.livejournal.com/74095.html</a></li>
+</ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-35">
+    <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
+<h4 id="selinux-the-docker-socket-other-bad-ideas">SELinux, the Docker socket, other bad ideas</h4>
+<p>Running Docker on a host without enabling TLS on the daemon.</p>
+<ul>
+<li>Anyone who can get network access to the docker port can start/stop containers</li>
+</ul>
+<p><img src='http://ak-hdl.buzzfed.com/static/2015-04/15/23/enhanced/webdr13/anigif_enhanced-5573-1429156700-35.gif' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img></p>
+<p><center>Hooray containers are working! ... oh<center></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-36">
+    <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
+<h4 id="selinux-the-docker-socket-other-bad-ideas">SELinux, the Docker socket, other bad ideas</h4>
+<p>Allowing docker access without sudo, especially on a non-development machine.</p>
+<pre><code>usermod -aG docker $USER</code></pre>
+<p><img src='http://vignette3.wikia.nocookie.net/familyguy/images/9/99/Stewie_gun_mouth_super.jpg/revision/latest?cb=20131211011839' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-37">
+    <section class="slide-content"><h3 id="docker-security">Docker Security</h3>
+<p>It takes a team to not have this happen to you.</p>
+<ul>
+<li>Operations must work with Development</li>
+<li>Development must work with Operations</li>
+<li>Security admins are strict for a reason</li>
+<li>Rushing is a bad idea and will end poorly</li>
+<li>Continuously improve together
+<img src='http://www.marine-knowledge.com/wp-content/uploads/2012/01/Container-Ship-Fire1.jpg' style='margin: 0 auto; display: block; width: 550px; height: 450px'></img></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-38">
+    <section class="slide-content"><h3 id="docker-networking">Docker Networking</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-39">
+    <section class="slide-content"><h3 id="cleanup">Cleanup</h3>
+<p>Docker images can eat up a lot of space, especially if you&#39;re constantly rebuilding and tagging. This size though is</p>
+<pre><code>$ docker images
+REPOSITORY                              TAG                  IMAGE ID            CREATED             SIZE
+greenlancer/jenkins-slave               latest               3bd6965573c9        5 hours ago         854.2 MB
+greenlancer/jenkins-slave               0.4.0                c41c6fd546e9        30 hours ago        716.1 MB
+greenlancer/jenkins-slave               0.3.0                122f48e241e5        30 hours ago        535.5 MB
+greenlancer/jenkins-slave               0.2.0                7d930fd16086        30 hours ago        401.6 MB
+greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5        31 hours ago        401.6 MB</code></pre>
+<p>The total size of that on disk is</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-40">
+    <section class="slide-content"><h3 id="agenda">Agenda</h3>
+<ul>
+<li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
+<li>Docker Commands</li>
+<li>Troubleshooting</li>
+<li>===== DEMO-1 =====</li>
+<li>Writing your own Dockerfiles</li>
+<li>Developer Workflow</li>
+<li>===== DEMO-2 =====</li>
+<li>Docker Security</li>
+<li>Docker Networking</li>
+<li>Cleanup</li>
+<li><font color='#ff0000'>===== DEMO-3 =====</font></li>
+<li>Day to day Docker usage @ GreenLancer</li>
+<li>How to get help</li>
+<li>Questions and Answers</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden  center" id="slide-41">
+    <section class="slide-content"><p><br>
+<br></p>
+<h1 id="demo-3">DEMO-3</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-42">
+    <section class="slide-content"><h3 id="how-do-we-actually-use-this-in-our-day-to-day-jobs-">How do we actually use this in our day to day jobs?</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-43">
     <section class="slide-content"><h3 id="how-to-get-help">How to get help</h3>
 <ul>
 <li>Freenode IRC: #docker</li>
@@ -1058,7 +1134,7 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-36">
+  <div class="slide hidden" id="slide-44">
     <section class="slide-content"><h3 id="agenda">Agenda</h3>
 <ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
@@ -1078,12 +1154,12 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-37">
+  <div class="slide hidden" id="slide-45">
     <section class="slide-content"><h3 id="q-a">Q/A</h3>
 <p><img src='images/qa.jpg' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img></p>
 </section>
   </div>
-  <div class="slide hidden author-slide" id="slide-38">
+  <div class="slide hidden author-slide" id="slide-46">
     <section class="slide-content"><div class="author">
   <h1 class="name">Phil Porada</h1>
     <h3 class="twitter">

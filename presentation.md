@@ -86,7 +86,11 @@ author:
 <br>
 <br>
 <br>
+<br>
+<br>
 \* If that system runs a 64bit Linux/FreeBSD/Solaris kernel
+<br>
+\*\* or an NT kernel.. soon
 
 --
 
@@ -104,27 +108,7 @@ author:
 * Finally allows code to be written once and ran on any\* system
 * Huge traction on Github - 30,368 stars as of 04/12/2016
 * Every big tech company and their brothers/sisters are creating PaaS' utilizing container technology
-
---
-
-### What is Docker?
-* Started in 2013 @ dotCloud
-* Written in Go
-* Finally allows code to be written once and ran on any\* system
-* Huge traction on Github - 30,368 stars as of 04/12/2016
-* Every big tech company and their brothers/sisters are creating PaaS' utilizing container technology
-* * RedHat (Project Atomic)
-* * Cisco (Mantl)
-* * Microsoft (Containers on Windows, Bash on Ubuntu.. on Windows)
-
---
-
-### What is Docker?
-* Started in 2013 @ dotCloud
-* Written in Go
-* Finally allows code to be written once and ran on any\* system
-* Huge traction on Github - 30,368 stars as of 04/12/2016
-* Every big tech company and their brothers/sisters are creating PaaS' utilizing container technology
+<img src='https://tctechcrunch2011.files.wordpress.com/2015/06/dsc00365.jpg?w=1024&h=680' style='margin: 0 auto; display: block; width: 1024px; height: 680px'></img>
 
 --
 
@@ -132,6 +116,32 @@ author:
 * Containers are not VMs nor will ever be
     * **VMs**: Think of each VM as an individual house
     * **Containers**: Think of them as units in an apartment
+
+--
+
+### What Docker is NOT
+* Containers are not VMs nor will ever be
+    * **VMs**: Think of each VM as an individual house
+    * **Containers**: Think of them as units in an apartment
+* The end of operations
+
+--
+
+### What Docker is NOT
+* Containers are not VMs nor will ever be
+    * **VMs**: Think of each VM as an individual house
+    * **Containers**: Think of them as units in an apartment
+* The end of operations
+* A walk in the park
+<img src='https://pbs.twimg.com/media/Ca4iAN7UUAAIB_0.jpg' style='margin: 0 auto; display: block; width: 650px; height: 650px'></img>
+
+--
+
+### What Docker is NOT
+* Containers are not VMs nor will ever be
+    * **VMs**: Think of each VM as an individual house
+    * **Containers**: Think of them as units in an apartment
+* The end of operations
 
 --
 
@@ -253,6 +263,7 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 [Mon Apr 11 23:59:08.108723 2016] [mpm_event:notice] [pid 1:tid 140473353303936] AH00489: Apache/2.4.18 (Unix) configured -- resuming normal operations
 [Mon Apr 11 23:59:08.108784 2016] [core:notice] [pid 1:tid 140473353303936] AH00094: Command line: 'httpd -D FOREGROUND'
 ```
+
 --
 
 ### Docker commands
@@ -301,26 +312,11 @@ $ docker logs e69
 
 --
 
-### Agenda
-* Requirements, Terminology, Intro to Docker, & Expectation Management
-* Docker Commands
-* Troubleshooting
-* ===== DEMO-1 =====
-* <font color="#ff0000">Writing your own Dockerfiles</font>
-* Developer Workflow
-* ===== DEMO-2 =====
-* Docker Security
-* Docker Networking
-* Cleanup
-* ===== DEMO-3 =====
-* Developer Workflow
-* Day to day Docker usage @ GreenLancer
-* How to get help
-* Questions and Answers
+### Writing your own Dockerfiles
 
 --
 
-### Writing your own Dockerfiles
+### Developer Workflow
 
 --
 
@@ -348,21 +344,109 @@ $ docker logs e69
 
 --
 
-### Agenda
-* Requirements, Terminology, Intro to Docker, & Expectation Management
-* Docker Commands
-* Troubleshooting
-* ===== DEMO-1 =====
-* Writing your own Dockerfiles
-* Developer Workflow
-* ===== DEMO-2 =====
-* <font color='#ff0000'>Docker Security</font>
-* Docker Networking
-* Cleanup
-* ===== DEMO-3 =====
-* Day to day Docker usage @ GreenLancer
-* How to get help
-* Questions and Answers
+### Docker Security
+#### Terminology
+<hr style="height:2pt; visibility:hidden;" />
+
+|  Docker Term | Explanation |
+| :----------- | ----------- |
+| Namespaces | Provides a view of the system that make the container appear to have all of the hosts resources. Examples are PIDs, Mounts, IPC, and Network. |
+| User Namespaces | Distinguish container privileged vs host privileged root user. |
+| Cgroups | |
+| Capabilities | |
+| AppArmor & SELinux | Allow containers to actually contain. |
+| Seccomp | Acts as a syscall firewall. When a userland process wants to communicate with the kernel, communication travels through the syscall interface. This includes opening files, loading kernel modules, etc|
+
+--
+
+### Docker Security
+#### Example of Namespacing
+Process 1 inside of a container
+```
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+b60d110ad078        nginx               "nginx -g 'daemon off"   4 minutes ago       Up 3 minutes        80/tcp, 443/tcp     evil_perlman
+```
+```
+$ docker exec -i b60 ps
+  PID TTY          TIME CMD
+    1 ?        00:00:00 nginx
+   10 ?        00:00:00 ps
+```
+```
+$ docker exec -i b60 hostname
+b60d110ad078
+```
+
+vs root on my host
+```
+root@laptappy:~# ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 185172  4496 ?        Ss   Apr07   0:06 /sbin/init splash
+root         2  0.0  0.0      0     0 ?        S    Apr07   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    Apr07   0:12 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   Apr07   0:00 [kworker/0:0H]
+```
+
+--
+
+### Docker Security
+#### SELinux, the Docker socket, other bad ideas
+Instant root on a host that exposes the Docker socket to it's containers when SELinux is not enabled
+```
+docker run -ti --privileged -v /:/host fedora chroot /host
+```
+
+<img src='images/dw1.png' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img>
+<center>Dan Walsh - creator of SELinux<center>
+
+* http://danwalsh.livejournal.com/74095.html
+
+--
+
+### Docker Security
+#### SELinux, the Docker socket, other bad ideas
+Instant root on a host that exposes the Docker socket to it's containers when SELinux is not enabled
+```
+docker run -ti --privileged -v /:/host fedora chroot /host
+```
+
+<img src='images/dw2.png' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img>
+<center>Dan Walsh - creator of SELinux<center>
+
+* http://danwalsh.livejournal.com/74095.html
+
+--
+
+### Docker Security
+#### SELinux, the Docker socket, other bad ideas
+Running Docker on a host without enabling TLS on the daemon.
+* Anyone who can get network access to the docker port can start/stop containers
+
+<img src='http://ak-hdl.buzzfed.com/static/2015-04/15/23/enhanced/webdr13/anigif_enhanced-5573-1429156700-35.gif' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img>
+<center>Hooray containers are working! ... oh<center>
+
+--
+
+### Docker Security
+#### SELinux, the Docker socket, other bad ideas
+Allowing docker access without sudo, especially on a non-development machine.
+```
+usermod -aG docker $USER
+```
+
+<img src='http://vignette3.wikia.nocookie.net/familyguy/images/9/99/Stewie_gun_mouth_super.jpg/revision/latest?cb=20131211011839' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img>
+
+--
+
+### Docker Security
+It takes a team to not have this happen to you.
+* Operations must work with Development
+* Development must work with Operations
+* Security admins are strict for a reason
+* Rushing is a bad idea and will end poorly
+* Continuously improve together
+<img src='http://www.marine-knowledge.com/wp-content/uploads/2012/01/Container-Ship-Fire1.jpg' style='margin: 0 auto; display: block; width: 550px; height: 450px'></img>
 
 --
 
@@ -385,22 +469,29 @@ greenlancer/jenkins-slave               0.1.0                e67c2d82f3d5       
 
 The total size of that on disk is
 
-
-
 --
 
-### Docker Security
-#### Terminology
-<hr style="height:2pt; visibility:hidden;" />
+### Agenda
+* Requirements, Terminology, Intro to Docker, & Expectation Management
+* Docker Commands
+* Troubleshooting
+* ===== DEMO-1 =====
+* Writing your own Dockerfiles
+* Developer Workflow
+* ===== DEMO-2 =====
+* Docker Security
+* Docker Networking
+* Cleanup
+* <font color='#ff0000'>===== DEMO-3 =====</font>
+* Day to day Docker usage @ GreenLancer
+* How to get help
+* Questions and Answers
 
-|  Docker Term | Explanation |
-| :----------- | ----------- |
-| Namespaces | Provides a view of the system that make the container appear to have all of the hosts resources. Examples are PIDs, Mounts, IPC, and Network. |
-| User Namespaces | Distinguish container privileged vs host privileged root user. |
-| Cgroups | |
-| Capabilities | |
-| AppArmor & SELinux | Allow containers to actually contain. |
-| Seccomp | Acts as a syscall firewall. When a userland process wants to communicate with the kernel, communication travels through the syscall interface. This includes opening files, loading kernel modules, etc|
+-- center
+
+<br>
+<br>
+# DEMO-3
 
 --
 
