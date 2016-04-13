@@ -114,34 +114,62 @@ author:
 
 ### What Docker is NOT
 * Containers are not VMs nor will ever be
-    * **VMs**: Think of each VM as an individual house
-    * **Containers**: Think of them as units in an apartment
 
 --
 
 ### What Docker is NOT
 * Containers are not VMs nor will ever be
-    * **VMs**: Think of each VM as an individual house
-    * **Containers**: Think of them as units in an apartment
 * The end of operations
 
 --
 
 ### What Docker is NOT
 * Containers are not VMs nor will ever be
-    * **VMs**: Think of each VM as an individual house
-    * **Containers**: Think of them as units in an apartment
 * The end of operations
 * A walk in the park
 <img src='https://pbs.twimg.com/media/Ca4iAN7UUAAIB_0.jpg' style='margin: 0 auto; display: block; width: 650px; height: 650px'></img>
 
 --
 
-### What Docker is NOT
-* Containers are not VMs nor will ever be
-    * **VMs**: Think of each VM as an individual house
-    * **Containers**: Think of them as units in an apartment
-* The end of operations
+### Why even use it?
+
+* Deployments become easier
+
+--
+
+### Why even use it?
+
+* Deployments become easier
+* Build artifacts work on every system
+
+--
+
+### Why even use it?
+
+* Deployments become easier
+* Build artifacts work on every system
+* Rollbacks are near instant (to humans)
+
+--
+
+### Why even use it?
+
+* Deployments become easier
+* Build artifacts work on every system
+* Rollbacks are near instant (to humans)
+* Containers will only become more prevalent as time goes on
+* * Microsoft has even embraced them
+
+--
+
+### Why even use it?
+
+* Deployments become easier
+* Build artifacts work on every system
+* Rollbacks are near instant (to humans)
+* Containers will only become more prevalent as time goes on
+* * Microsoft has even embraced them
+* You can put legacy applications/software in a locked down container and still upgrade the host that the container runs on. Applications should not halt infrastructure upgrades.
 
 --
 
@@ -169,7 +197,7 @@ author:
 ### Docker Terminology
 <hr style="height:2pt; visibility:hidden;" />
 
-|  Docker Term | Definition  |
+|  <font color="#00cc00">Docker Term</font> | <font color="#00cc00">Definition</font>  |
 | :-- | -- |
 | Layer | Read-only files that have run to provision the system. |
 | Image | Basis of all containers. |
@@ -179,23 +207,6 @@ author:
 | Container ID/CID |A SHA256 checksum of the entire image manifest. |
 
 <img src='images/multilayer-container.png' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img>
-
---
-
-### Agenda
-* Requirements, Terminology, Intro to Docker, & Expectation Management
-* <font color="#ff000">Docker Commands</font>
-* Troubleshooting
-* ===== DEMO-1 =====
-* Writing your own Dockerfiles
-* Developer Workflow
-* ===== DEMO-2 =====
-* Docker Security
-* Docker Networking
-* Cleanup
-* ===== DEMO-3 =====
-* Day to day Docker usage @ GreenLancer
-* Questions and Answers
 
 --
 
@@ -256,6 +267,7 @@ a870e1ec8f92           httpd                 "httpd-foreground"  2 seconds ago  
 ### Docker commands
 ####docker run $CID
 * Run a container in the foreground
+
 ```
 $ docker run httpd
 AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 10.250.1.3. Set the 'ServerName' directive globally to suppress this message
@@ -269,6 +281,7 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 ### Docker commands
 #### docker run -d $CID
 * Run a container in the background
+
 ```
 $ docker run -d httpd
 e6902788cd79fd5782f2fdb464b9d061f12395aad1aa7a7487822764de3f811c
@@ -313,6 +326,52 @@ $ docker logs e69
 --
 
 ### Writing your own Dockerfiles
+#### Dockerfile Commands
+```
+    FROM
+    MAINTAINER
+    ADD
+    ENV
+    EXPOSE
+    RUN
+    USER
+    VOLUME
+    WORKDIR
+    CMD
+    ENTRYPOINT
+```
+
+--
+
+### Writing your own Dockerfiles
+#### Example Dockerfile
+```
+FROM centos:centos7
+MAINTAINER The CentOS Project <cloud-ops@centos.org>
+
+RUN yum -y install \
+    openssl-devel \
+    openssl \
+    readline \
+    readline-devel \
+    gcc \
+    gcc-c++ \
+    rubygems \
+    rubygems-devel \
+    ruby \
+    ruby-devel; \
+yum clean all
+
+# install earthquake
+RUN gem install earthquake
+
+RUN useradd -d /home/twitter twitter
+USER twitter
+ENV HOME /home/twitter
+WORKDIR /home/twitter
+
+CMD ["earthquake"]
+```
 
 --
 
@@ -348,7 +407,7 @@ $ docker logs e69
 #### Terminology
 <hr style="height:2pt; visibility:hidden;" />
 
-|  Docker Term | Explanation |
+|  <font color="#00cc00">Docker Term</font> | <font color="#00cc00">Explanation</font> |
 | :----------- | ----------- |
 | Namespaces | Provides a view of the system that make the container appear to have all of the hosts resources. Examples are PIDs, Mounts, IPC, and Network. |
 | User Namespaces | Distinguish container privileged vs host privileged root user. |
@@ -451,6 +510,64 @@ It takes a team to not have this happen to you.
 --
 
 ### Docker Networking
+#### Host network interface/iptables
+Docker creates a bridge interface named **docker0** when the daemon starts.
+```
+$ ip addr | grep docker0
+11: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    inet 10.250.1.1/24 scope global docker0
+```
+
+```
+$ sudo iptables -S
+-P INPUT ACCEPT
+-P FORWARD ACCEPT
+-P OUTPUT ACCEPT
+-N DOCKER
+-N DOCKER-ISOLATION
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+-A FORWARD -j DOCKER-ISOLATION
+-A FORWARD -o docker0 -j DOCKER
+-A FORWARD -o docker0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i docker0 ! -o docker0 -j ACCEPT
+-A FORWARD -i docker0 -o docker0 -j ACCEPT
+-A OUTPUT -j ACCEPT
+-A DOCKER-ISOLATION -j RETURN
+```
+
+* Firewalld DOES NOT play nicely with Docker yet per https://github.com/docker/docker/issues/16137
+
+--
+
+### Docker Networking
+#### Container to container communication
+* Docker containers can communicate with each other over the **docker0** bridge network.
+* Containers can use names to reference each other
+* Will be shown during the demo
+
+--
+
+### Docker Networking
+#### Swarm
+Assume the following infrastructure
+* HostA, HostB, and HostC can all communicate with each other
+* Each host runs a docker daemon
+* Communication for containers should be possible between hosts, right?
+<img src='http://blog.arungupta.me/wp-content/uploads/2015/12/docker-networking.png' style='margin: 0 auto; display: block; width: 700px; height: 600px'></img>
+
+--
+
+### Docker Networking
+#### Swarm
+With Docker Swarm, this is now possible with thanks due to overlay networking.
+* Provides standardized Docker API to manage individual Docker hosts.
+* Resources of the Docker Swarm hosts are pooled allowing containers to be packed wherever they can fit barring constraints
+* Similar projects are Apache Mesos and Kubernetes
+<img src='https://image.slidesharecdn.com/swarmonlinemeetup-150507153718-lva1-app6891/95/docker-swarm-020-5-638.jpg' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img>
 
 --
 
@@ -496,10 +613,35 @@ The total size of that on disk is
 --
 
 ### How do we actually use this in our day to day jobs?
+#### Working on micro-services
+
+* Run a docker daemon on a prod-like vagrant VM
+* Develop code on the vagrant or locally
+* Rebuild dockerfiles
+* Test the resulting container with the rest of the local cluster
+<img src='http://zhaozhiming.github.io/images/post/2014-11/docker_vagrant_small.png' style='margin: 0 auto; display: block; width: 550px; height: 250px'></img>
+
+--
+
+### How do we actually use this in our day to day jobs?
+#### Migrating from development to qa/staging/prod
+<img src='http://blog.wercker.com/images/posts/2015-07-28-Dockerfiles-considered-harmful/best-practice-flow.png' style='margin: 0 auto; display: block; width: 1000px; height: 600px'></img>
+
+--
+
+### The rest of the Docker universe
+#### Your Homework
+* Service Discovery
+* Service Registration
+* Data Volumes
+* Logging
+* End to end testing
+* Stateful applications (try not to)
 
 --
 
 ### How to get help
+#### AKA: Expect to spend a lot of time in these places
 * Freenode IRC: #docker
 * https://github.com/docker/docker/issues
 * Google.
