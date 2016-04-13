@@ -22,6 +22,13 @@ light green : #a6e22e
 
 /* Local Fonts */
 @font-face {
+  font-family: 'Anonymous';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/anonymous/anonymous.woff') format('woff');
+}
+
+@font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
@@ -178,7 +185,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 100%;
   color: #fafafa;
-  background-color: #FF0000;
+  background-color: #191919;
 }
 
 /* Custom Slide Styles */
@@ -416,7 +423,9 @@ table th {
 code {
   padding: .1em .35em;
   font-family: 'Fira Mono';
-  color: #fafafa;
+  /* color: #fafafa; */
+  font-family: 'Anonymous', monospace;
+  color: white;
   background-color: #272822;
   border-radius: 3px;
 }
@@ -424,10 +433,14 @@ code {
 pre code {
   display: block;
   padding: .5em;
-  font-family: 'Fira Mono';
+  /*font-family: 'Fira Mono'; */
   font-weight: 400;
   overflow-y: hidden;
-  background: #272822;
+  /*background: #272822;*/
+  background: #292929;
+  font-family: 'Anonymous', monospace;
+  color: #ababab;
+  border-left: 8px solid #00A514;
 }
 
 pre .tag,
@@ -445,7 +458,8 @@ pre .tex .special {
 }
 
 pre code {
-  color: #75715e;
+  /*color: #75715e;*/
+  color: #ababab;
 }
 
 pre code .constant {
@@ -700,11 +714,11 @@ pre .xml .cdata {
 <li>===== DEMO =====</li>
 <li>Writing your own Dockerfiles</li>
 <li>Dockerfile deep dive</li>
+<li>Developer Workflow</li>
 <li>===== DEMO =====</li>
 <li>Docker Security</li>
 <li>Docker Networking</li>
 <li>===== DEMO =====</li>
-<li>Developer Workflow</li>
 <li>Day to day Docker usage @ GreenLancer</li>
 <li>Questions and Answers</li>
 </ul>
@@ -840,18 +854,19 @@ pre .xml .cdata {
 <li>===== DEMO-1 =====</li>
 <li>Writing your own Dockerfiles</li>
 <li>Dockerfile deep dive</li>
+<li>Developer Workflow</li>
 <li>===== DEMO-2 =====</li>
 <li>Docker Security</li>
 <li>Docker Networking</li>
 <li>===== DEMO-3 =====</li>
-<li>Developer Workflow</li>
 <li>Day to day Docker usage @ GreenLancer</li>
 <li>Questions and Answers</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-12">
-    <section class="slide-content"><h4 id="docker-ps">docker ps</h4>
+    <section class="slide-content"><h3 id="commands">Commands</h3>
+<h4 id="docker-ps">docker ps</h4>
 <p>Show running docker containers</p>
 <pre><code class="lang-sh">$ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
@@ -873,29 +888,29 @@ a870e1ec8f92           httpd                 <span class="hljs-string">"httpd-fo
 <h4 id="docker-run-cid">docker run $CID</h4>
 <ul>
 <li><p>Run a container in the foreground</p>
-<pre><code class="lang-sh">$ docker run httpd
-AH00558: httpd: Could not reliably determine the server<span class="hljs-string">'s fully qualified domain name, using 10.250.1.3. Set the '</span>ServerName<span class="hljs-string">' directive globally to suppress this message
-AH00558: httpd: Could not reliably determine the server'</span>s fully qualified domain name, using 10.250.1.3. Set the <span class="hljs-string">'ServerName'</span> directive globally to suppress this message
+<pre><code>$ docker run httpd
+AH00558: httpd: Could not reliably determine the server&#39;s fully qualified domain name, using 10.250.1.3. Set the &#39;ServerName&#39; directive globally to suppress this message
+AH00558: httpd: Could not reliably determine the server&#39;s fully qualified domain name, using 10.250.1.3. Set the &#39;ServerName&#39; directive globally to suppress this message
 [Mon Apr 11 23:59:08.108723 2016] [mpm_event:notice] [pid 1:tid 140473353303936] AH00489: Apache/2.4.18 (Unix) configured -- resuming normal operations
-[Mon Apr 11 23:59:08.108784 2016] [core:notice] [pid 1:tid 140473353303936] AH00094: Command line: <span class="hljs-string">'httpd -D FOREGROUND'</span></code></pre>
+[Mon Apr 11 23:59:08.108784 2016] [core:notice] [pid 1:tid 140473353303936] AH00094: Command line: &#39;httpd -D FOREGROUND&#39;</code></pre>
 </li>
 <li><p>Run a container in the background
-```sh
+```
 $ docker run -d httpd
 e6902788cd79fd5782f2fdb464b9d061f12395aad1aa7a7487822764de3f811c</p>
 </li>
 </ul>
 <p>$ docker ps
 CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS              PORTS               NAMES
-e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours ago         Up 5 hours          80/tcp              awesome_payne</p>
-<p>```</p>
+e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours ago         Up 5 hours          80/tcp              awesome_payne
+```</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-15">
     <section class="slide-content"><h3 id="troubleshooting">Troubleshooting</h3>
 <h4 id="docker-logs-container">docker logs $CONTAINER</h4>
 <ul>
-<li>Get logs from a container<pre><code class="lang-sh">$ docker logs e69</code></pre>
+<li>Get logs from a container<pre><code>$ docker logs e69</code></pre>
 </li>
 </ul>
 </section>
@@ -909,11 +924,11 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 <li><font color="#ff0000">===== DEMO-1 =====</font></li>
 <li>Writing your own Dockerfiles</li>
 <li>Dockerfile deep dive</li>
+<li>Developer Workflow</li>
 <li>===== DEMO-2 =====</li>
 <li>Docker Security</li>
 <li>Docker Networking</li>
 <li>===== DEMO-3 =====</li>
-<li>Developer Workflow</li>
 <li>Day to day Docker usage @ GreenLancer</li>
 <li>Questions and Answers</li>
 </ul>
@@ -924,12 +939,13 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 </section>
   </div>
   <div class="slide hidden" id="slide-18">
-    <section class="slide-content"><ul>
+    <section class="slide-content"><h3 id="agenda">Agenda</h3>
+<ul>
 <li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
 <li>Docker Commands</li>
 <li>Troubleshooting</li>
-<li><font color="#ff0000">===== DEMO-1 =====</font></li>
-<li>Writing your own Dockerfiles</li>
+<li>===== DEMO-1 =====</li>
+<li><font color="#ff0000">Writing your own Dockerfiles</font></li>
 <li>Dockerfile deep dive</li>
 <li>===== DEMO-2 =====</li>
 <li>Docker Security</li>
@@ -937,15 +953,78 @@ e6902788cd79        httpd               &quot;httpd-foreground&quot;   5 hours a
 <li>===== DEMO-3 =====</li>
 <li>Developer Workflow</li>
 <li>Day to day Docker usage @ GreenLancer</li>
+<li>How to get help</li>
 <li>Questions and Answers</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-19">
-    <section class="slide-content"><h3 id="how-can-we-actually-use-this-in-our-day-to-day-jobs-">How can we actually use this in our day to day jobs?</h3>
+    <section class="slide-content"><h3 id="writing-your-own-dockerfiles">Writing your own Dockerfiles</h3>
 </section>
   </div>
-  <div class="slide hidden author-slide" id="slide-20">
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h3 id="dockerfile-deep-dive">Dockerfile Deep Dive</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="agenda">Agenda</h3>
+<ul>
+<li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
+<li>Docker Commands</li>
+<li>Troubleshooting</li>
+<li>===== DEMO-1 =====</li>
+<li>Writing your own Dockerfiles</li>
+<li><font color="#ff0000">Dockerfile deep dive</font></li>
+<li>Developer Workflow</li>
+<li>===== DEMO-2 =====</li>
+<li>Docker Security</li>
+<li>Docker Networking</li>
+<li>===== DEMO-3 =====</li>
+<li>Day to day Docker usage @ GreenLancer</li>
+<li>How to get help</li>
+<li>Questions and Answers</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><h3 id="how-do-we-actually-use-this-in-our-day-to-day-jobs-">How do we actually use this in our day to day jobs?</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h3 id="how-to-get-help">How to get help</h3>
+<ul>
+<li>Freenode IRC: #docker</li>
+<li><a href="https://github.com/docker/docker/issues">https://github.com/docker/docker/issues</a></li>
+<li>Google.</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h3 id="agenda">Agenda</h3>
+<ul>
+<li>Requirements, Terminology, Intro to Docker, &amp; Expectation Management</li>
+<li>Docker Commands</li>
+<li>Troubleshooting</li>
+<li>===== DEMO-1 =====</li>
+<li>Writing your own Dockerfiles</li>
+<li>Dockerfile deep dive</li>
+<li>Developer Workflow</li>
+<li>===== DEMO-2 =====</li>
+<li>Docker Security</li>
+<li>Docker Networking</li>
+<li>===== DEMO-3 =====</li>
+<li>Day to day Docker usage @ GreenLancer</li>
+<li>How to get help</li>
+<li><font color="#ff000">Questions and Answers</font></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden  center" id="slide-25">
+    <section class="slide-content"><h1 id="q-a">Q/A</h1>
+<p><img src='images/qa.jpg' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img></p>
+</section>
+  </div>
+  <div class="slide hidden author-slide" id="slide-26">
     <section class="slide-content"><div class="author">
   <h1 class="name">Phil Porada</h1>
     <h3 class="twitter">

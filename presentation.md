@@ -54,11 +54,11 @@ author:
 * ===== DEMO =====
 * Writing your own Dockerfiles
 * Dockerfile deep dive
+* Developer Workflow
 * ===== DEMO =====
 * Docker Security
 * Docker Networking
 * ===== DEMO =====
-* Developer Workflow
 * Day to day Docker usage @ GreenLancer
 * Questions and Answers
 
@@ -119,16 +119,16 @@ author:
 * ===== DEMO-1 =====
 * Writing your own Dockerfiles
 * Dockerfile deep dive
+* Developer Workflow
 * ===== DEMO-2 =====
 * Docker Security
 * Docker Networking
 * ===== DEMO-3 =====
-* Developer Workflow
 * Day to day Docker usage @ GreenLancer
 * Questions and Answers
 
 --
-
+### Commands
 #### docker ps
 Show running docker containers
 ```sh
@@ -156,7 +156,7 @@ a870e1ec8f92           httpd                 "httpd-foreground"  2 seconds ago  
 ### Starting containers
 ####docker run $CID
 * Run a container in the foreground
-```sh
+```
 $ docker run httpd
 AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 10.250.1.3. Set the 'ServerName' directive globally to suppress this message
 AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 10.250.1.3. Set the 'ServerName' directive globally to suppress this message
@@ -165,14 +165,13 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 ```
 
 * Run a container in the background
-```sh
+```
 $ docker run -d httpd
 e6902788cd79fd5782f2fdb464b9d061f12395aad1aa7a7487822764de3f811c
 
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS              PORTS               NAMES
 e6902788cd79        httpd               "httpd-foreground"   5 hours ago         Up 5 hours          80/tcp              awesome_payne
-
 ```
 
 --
@@ -180,7 +179,7 @@ e6902788cd79        httpd               "httpd-foreground"   5 hours ago        
 ### Troubleshooting
 #### docker logs $CONTAINER
 * Get logs from a container
-```sh
+```
 $ docker logs e69
 ```
 
@@ -193,11 +192,11 @@ $ docker logs e69
 * <font color="#ff0000">===== DEMO-1 =====</font>
 * Writing your own Dockerfiles
 * Dockerfile deep dive
+* Developer Workflow
 * ===== DEMO-2 =====
 * Docker Security
 * Docker Networking
 * ===== DEMO-3 =====
-* Developer Workflow
 * Day to day Docker usage @ GreenLancer
 * Questions and Answers
 
@@ -207,11 +206,12 @@ $ docker logs e69
 
 --
 
+### Agenda
 * Requirements, Terminology, Intro to Docker, & Expectation Management
 * Docker Commands
 * Troubleshooting
-* <font color="#ff0000">===== DEMO-1 =====</font>
-* Writing your own Dockerfiles
+* ===== DEMO-1 =====
+* <font color="#ff0000">Writing your own Dockerfiles</font>
 * Dockerfile deep dive
 * ===== DEMO-2 =====
 * Docker Security
@@ -219,9 +219,65 @@ $ docker logs e69
 * ===== DEMO-3 =====
 * Developer Workflow
 * Day to day Docker usage @ GreenLancer
+* How to get help
 * Questions and Answers
 
 --
 
-### How can we actually use this in our day to day jobs?
+### Writing your own Dockerfiles
 
+--
+
+### Dockerfile Deep Dive
+
+--
+
+### Agenda
+* Requirements, Terminology, Intro to Docker, & Expectation Management
+* Docker Commands
+* Troubleshooting
+* ===== DEMO-1 =====
+* Writing your own Dockerfiles
+* <font color="#ff0000">Dockerfile deep dive</font>
+* Developer Workflow
+* ===== DEMO-2 =====
+* Docker Security
+* Docker Networking
+* ===== DEMO-3 =====
+* Day to day Docker usage @ GreenLancer
+* How to get help
+* Questions and Answers
+
+--
+
+### How do we actually use this in our day to day jobs?
+
+--
+
+### How to get help
+* Freenode IRC: #docker
+* https://github.com/docker/docker/issues
+* Google.
+
+--
+
+### Agenda
+* Requirements, Terminology, Intro to Docker, & Expectation Management
+* Docker Commands
+* Troubleshooting
+* ===== DEMO-1 =====
+* Writing your own Dockerfiles
+* Dockerfile deep dive
+* Developer Workflow
+* ===== DEMO-2 =====
+* Docker Security
+* Docker Networking
+* ===== DEMO-3 =====
+* Day to day Docker usage @ GreenLancer
+* How to get help
+* <font color="#ff000">Questions and Answers</font>
+
+-- center
+
+# Q/A
+<img src='images/qa.jpg' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img>
