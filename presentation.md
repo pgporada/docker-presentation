@@ -12,7 +12,7 @@ author:
 
 --
 
-# Docker: There and Back Again
+<h1>Docker: There and Back Again</h1>
 <img src='images/detroit.png' style='margin: 0 auto; display: block'></img>
 
 --
@@ -164,7 +164,10 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 [Mon Apr 11 23:59:08.108723 2016] [mpm_event:notice] [pid 1:tid 140473353303936] AH00489: Apache/2.4.18 (Unix) configured -- resuming normal operations
 [Mon Apr 11 23:59:08.108784 2016] [core:notice] [pid 1:tid 140473353303936] AH00094: Command line: 'httpd -D FOREGROUND'
 ```
+--
 
+### Starting Containers
+#### docker run -d $CID
 * Run a container in the background
 ```
 $ docker run -d httpd
