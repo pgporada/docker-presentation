@@ -1,1 +1,7 @@
-1 container that builds the dockerfile
+pizza:
+    build: ../
+    dockerfile: Dockerfile
+    hostname: pizza
+    ports:
+        - 80:80
+        - 443:443
