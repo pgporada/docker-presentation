@@ -50,7 +50,7 @@ author:
 --
 
 ### Agenda
-* <font color="#ff000">Requirements, Terminology, Intro to Docker, & Expectation Management</font>
+* <font color="#ff000">Docker Intro, Requirements, Terminology, & Expectation Management</font>
 * Docker Commands, Troubleshooting
 * Troubleshooting
 * ===== DEMO =====
@@ -63,6 +63,75 @@ author:
 * ===== DEMO =====
 * Day to day Docker usage @ GreenLancer
 * Questions and Answers
+
+--
+
+### What is Docker?
+* Started in 2013 @ dotCloud
+
+--
+
+### What is Docker?
+* Started in 2013 @ dotCloud
+* Written in Go
+
+<img src='http://jbu.io/wp-content/uploads/2015/10/go_lang_mascot_by_kirael_art-d7kunhu.gif' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img>
+
+--
+
+### What is Docker?
+* Started in 2013 @ dotCloud
+* Written in Go
+* Finally allows code to be written once and ran on any\* system
+<br>
+<br>
+<br>
+\* If that system runs a 64bit Linux/FreeBSD/Solaris kernel
+
+--
+
+### What is Docker?
+* Started in 2013 @ dotCloud
+* Written in Go
+* Finally allows code to be written once and ran on any\* system
+* Huge traction on Github - 30,368 stars as of 04/12/2016
+
+--
+
+### What is Docker?
+* Started in 2013 @ dotCloud
+* Written in Go
+* Finally allows code to be written once and ran on any\* system
+* Huge traction on Github - 30,368 stars as of 04/12/2016
+* Every big tech company and their brothers/sisters are creating PaaS' utilizing container technology
+
+--
+
+### What is Docker?
+* Started in 2013 @ dotCloud
+* Written in Go
+* Finally allows code to be written once and ran on any\* system
+* Huge traction on Github - 30,368 stars as of 04/12/2016
+* Every big tech company and their brothers/sisters are creating PaaS' utilizing container technology
+* * RedHat (Project Atomic)
+* * Cisco (Mantl)
+* * Microsoft (Containers on Windows, Bash on Ubuntu.. on Windows)
+
+--
+
+### What is Docker?
+* Started in 2013 @ dotCloud
+* Written in Go
+* Finally allows code to be written once and ran on any\* system
+* Huge traction on Github - 30,368 stars as of 04/12/2016
+* Every big tech company and their brothers/sisters are creating PaaS' utilizing container technology
+
+--
+
+### What Docker is NOT
+* Containers are not VMs nor will ever be
+    * **VMs**: Think of each VM as an individual house
+    * **Containers**: Think of them as units in an apartment
 
 --
 
@@ -100,35 +169,6 @@ author:
 | Container ID/CID |A SHA256 checksum of the entire image manifest. |
 
 <img src='images/multilayer-container.png' style='margin: 0 auto; display: block; width: 600px; height: 500px'></img>
-
---
-
-### What is Docker?
-* Started in 2013 @ dotCloud
-
---
-
-### What is Docker?
-* Started in 2013 @ dotCloud
-* Written in Go
-
-<img src='http://jbu.io/wp-content/uploads/2015/10/go_lang_mascot_by_kirael_art-d7kunhu.gif' style='margin: 0 auto; display: block; width: 500px; height: 500px'></img>
-
---
-
-### What is Docker?
-* Started in 2013 @ dotCloud
-* Written in Go
-* Finally allows code to be written once and ran on any\* system
-
-\* If that system runs a 64bit Linux/FreeBSD/Solaris kernel
-
---
-
-### What Docker is NOT
-* Containers are not VMs nor will ever be
-    * **VMs**: Think of each VM as an individual house
-    * **Containers**: Think of them as units in an apartment
 
 --
 
